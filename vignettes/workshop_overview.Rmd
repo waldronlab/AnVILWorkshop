@@ -1,4 +1,20 @@
-![](https://github.com/shbrief/AnVILWorkshop/workflows/.github/workflows/basic_checks.yaml/badge.svg)
+---
+title: "Workshop Overview"
+author: Sehyun Oh^[shbrief@gmail.com]
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Example Workshop}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 # Introduction to the Terra/AnVIL Cloud-based Genomics Platform
 

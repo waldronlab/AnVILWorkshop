@@ -1,0 +1,26 @@
+Package: AnVILWorkshop
+Title: Bioconductor Workshop for AnVIL/Terra
+Version: 0.1.1
+Authors@R: 
+    person(given = "Sehyun",
+           family = "Oh",
+           role = c("aut", "cre"),
+           email = "shbriefi@gmail.com",
+           comment = c(ORCID = "0000-0002-9490-3061"))
+Description: We introduce cloud-based genomics platofrm, Terra, and Bioconductor
+    package AnVIL for R-friendly usage of Terra.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Depends: 
+    AnVIL
+Suggests: 
+    knitr,
+    rmarkdown,
+    pkgdown
+URL: https://waldronlab.github.io/AnVILWorkshop/
+BugReports: https://github.com/waldronlab/AnVILWorkshop/issues/new/choose
+VignetteBuilder: knitr
+DockerImage: shbrief/AnVILWorkshop
