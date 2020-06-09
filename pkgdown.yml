@@ -2,8 +2,8 @@ pandoc: 2.7.3
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles: []
-last_built: 2020-06-09T01:43Z
+last_built: 2020-06-09T17:08Z
 urls:
-  reference: https://shbrief.github.io/AnVILWorkshop/reference
-  article: https://shbrief.github.io/AnVILWorkshop/articles
+  reference: https://waldronlab.io/AnVILWorkshop/reference
+  article: https://waldronlab.io/AnVILWorkshop/articles
 
