@@ -3,16 +3,16 @@
 # Introduction to the Terra/AnVIL Cloud-based Genomics Platform
 
 ## Instructor names and contact information
-Sehyun Oh* <Sehyun.Oh@sph.cuny.edu> [1] \
-Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1] \
-Lori Shepherd <lori.shepherd@roswellpark.org> [2] \
-Nitesh Turaga <Nitesh.Turaga@roswellpark.org> [2] \
-Martin Morgan <martin.morgan@roswellpark.org> [2] \
-BJ Stubbs <rebjh@channing.harvard.edu> [3] \
+Sehyun Oh* <Sehyun.Oh@sph.cuny.edu> [1]   
+Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1]   
+Lori Shepherd <lori.shepherd@roswellpark.org> [2]   
+Nitesh Turaga <Nitesh.Turaga@roswellpark.org> [2]   
+Martin Morgan <martin.morgan@roswellpark.org> [2]   
+BJ Stubbs <rebjh@channing.harvard.edu> [3]   
 Vince Carey <stvjc@channing.harvard.edu> [3]    
 
-[1] CUNY Graduate School of Public Health and Health Policy and Institute for Implementation Science in Population Health, New York, 10027, USA \
-[2] Roswell Park Comprehensive Cancer Center, Buffalo, New York, 14203, USA \
+[1] CUNY Graduate School of Public Health and Health Policy and Institute for Implementation Science in Population Health, New York, 10027, USA   
+[2] Roswell Park Comprehensive Cancer Center, Buffalo, New York, 14203, USA   
 [3] Channing Division of Network Medicine, Harvard Medical School, Boston, Massachusetts, 02115, USA 
    
    
