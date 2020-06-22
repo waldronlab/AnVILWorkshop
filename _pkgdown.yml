@@ -11,6 +11,21 @@ home:
 
 
 navbar:
+  title: ~
+  type: default
+  left:
+    - text: Workshop
+      menu:
+      - text: How to start
+        href: articles/overview.html
+      - text: Interactive Analysis
+        href: articles/usecase.html
+    - text: Reference
+      menu:
+      - text: Cloud Genomics Platforms
+        href: articles/cloud_genomics_platform.html
+      - text: AnVIL package
+        href: articles/AnVIL_package.html
   right:
    - icon: fa-github
      href: https://github.com/waldronlab/AnVILWorkshop
