@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>usecase • AnVILWorkshop</title>
+<title> • AnVILWorkshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="usecase">
+<script src="../pkgdown.js"></script><meta property="og:title" content="">
 <meta property="og:description" content="AnVILWorkshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -51,10 +51,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/overview.html">How to start</a>
+      <a href="../articles/overview.html">How to access datasets and workflows</a>
     </li>
     <li>
-      <a href="../articles/usecase.html">Interactive Analysis</a>
+      <a href="../articles/usecase.html">Interactive analysis setup and demonstration</a>
     </li>
   </ul>
 </li>
@@ -66,9 +66,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/cloud_genomics_platform.html">Cloud Genomics Platforms</a>
-    </li>
-    <li>
       <a href="../articles/AnVIL_package.html">AnVIL package</a>
     </li>
   </ul>
@@ -94,7 +91,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>usecase</h1>
+      <h1 data-toc-skip></h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/waldronlab/AnVILWorkshop/blob/master/vignettes/usecase.Rmd"><code>vignettes/usecase.Rmd</code></a></small>
@@ -104,26 +101,42 @@
 
     
     
-<div id="r-markdown" class="section level2">
+<div id="use-cases" class="section level1">
+<h1 class="hasAnchor">
+<a href="#use-cases" class="anchor"></a>Use Cases</h1>
+<div id="terra-in-the-classroom" class="section level2">
 <h2 class="hasAnchor">
-<a href="#r-markdown" class="anchor"></a>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">cars</span>)</pre></body></html></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<a href="#terra-in-the-classroom" class="anchor"></a>Terra in the classroom</h2>
 </div>
-<div id="including-plots" class="section level2">
+<div id="interactive-analysis" class="section level2">
 <h2 class="hasAnchor">
-<a href="#including-plots" class="anchor"></a>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="usecase_files/figure-html/pressure-1.png" width="700"></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<a href="#interactive-analysis" class="anchor"></a>Interactive analysis</h2>
+<div id="introduction" class="section level3">
+<h3 class="hasAnchor">
+<a href="#introduction" class="anchor"></a>Introduction</h3>
+<p><a href="https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV">This workspace</a> provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [<a href="https://ascopubs.org/doi/10.1200/CCI.19.00130">link</a>]:</p>
+<p><strong>Reliable analysis of clinical tumor-only whole exome sequencing data</strong><br>
+Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.</p>
+<p>The major benefits of having Terra workspace with research paper:<br>
+- Data storage, pipeline (compute-intense), and downstream analysis are all available in one place<br>
+- Improved reproducibility<br>
+- Sharing code and providing additional information not included in the paper are available through this workspace</p>
+</div>
+<div id="features" class="section level3">
+<h3 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h3>
+<p><strong>1. Data</strong> Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace<br>
+Public reference files (stored in GCP, some are directly available through Terra)<br>
+Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’</p>
+<p><strong>2. Workflows</strong> 7 WDL workflows, running sequentially<br>
+Incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…)</p>
+<p><img src="workflows.png"></p>
+<p><strong>3. Notebooks</strong> Using Custom image: us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor<br>
+5 notebooks → 4 for data pre-processing and 1 for downstream analysis<br>
+AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’</p>
+<p><img src="notebooks.png"></p>
+</div>
+</div>
 </div>
   </div>
 

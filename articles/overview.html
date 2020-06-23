@@ -51,10 +51,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/overview.html">How to start</a>
+      <a href="../articles/overview.html">How to access datasets and workflows</a>
     </li>
     <li>
-      <a href="../articles/usecase.html">Interactive Analysis</a>
+      <a href="../articles/usecase.html">Interactive analysis setup and demonstration</a>
     </li>
   </ul>
 </li>
@@ -66,9 +66,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/cloud_genomics_platform.html">Cloud Genomics Platforms</a>
-    </li>
-    <li>
       <a href="../articles/AnVIL_package.html">AnVIL package</a>
     </li>
   </ul>
@@ -104,93 +101,103 @@
 
     
     
-<div id="introduction-to-the-terraanvil-cloud-based-genomics-platform" class="section level1">
+<div id="introduction" class="section level1">
 <h1 class="hasAnchor">
-<a href="#introduction-to-the-terraanvil-cloud-based-genomics-platform" class="anchor"></a>Introduction to the Terra/AnVIL Cloud-based Genomics Platform</h1>
-<div id="instructor-names-and-contact-information" class="section level2">
+<a href="#introduction" class="anchor"></a>Introduction</h1>
+<div id="cloud-based-genomics-platforms" class="section level2">
 <h2 class="hasAnchor">
-<a href="#instructor-names-and-contact-information" class="anchor"></a>Instructor names and contact information</h2>
-<p>Sehyun Oh* <a href="mailto:Sehyun.Oh@sph.cuny.edu" class="email">Sehyun.Oh@sph.cuny.edu</a> [1]<br>
-Levi Waldron* <a href="mailto:Levi.Waldron@sph.cuny.edu" class="email">Levi.Waldron@sph.cuny.edu</a> [1]<br>
-Lori Shepherd <a href="mailto:lori.shepherd@roswellpark.org" class="email">lori.shepherd@roswellpark.org</a> [2]<br>
-Nitesh Turaga <a href="mailto:Nitesh.Turaga@roswellpark.org" class="email">Nitesh.Turaga@roswellpark.org</a> [2]<br>
-Martin Morgan <a href="mailto:martin.morgan@roswellpark.org" class="email">martin.morgan@roswellpark.org</a> [2]<br>
-BJ Stubbs <a href="mailto:rebjh@channing.harvard.edu" class="email">rebjh@channing.harvard.edu</a> [3]<br>
-Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@channing.harvard.edu</a> [3]<br></p>
-<p>[1] CUNY Graduate School of Public Health and Health Policy and Institute for Implementation Science in Population Health, New York, 10027, USA<br>
-[2] Roswell Park Comprehensive Cancer Center, Buffalo, New York, 14203, USA<br>
-[3] Channing Division of Network Medicine, Harvard Medical School, Boston, Massachusetts, 02115, USA<br></p>
-</div>
-<div id="workshop-description" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workshop-description" class="anchor"></a>Workshop Description</h2>
-<p>The rapidly growing size of genomic datasets introduces challenges of data transfer, storage, access, sharing, and computing. In this workshop, we introduce cloud-based genomics platform <a href="https://anvil.terra.bio/">Terra</a> as a potential solution. Terra hosts large-scale genomic and genomic-related data sets and provide secure remote access to them and to individually uploaded data resources. Terra also provides on-demand computational capacity through Google Cloud Platform, and interactive analysis interfaces such as Jupyter notebook and RStudio. Users can run best practice tools and pipelines already implemented or upload their own data or analysis methods to workspaces. Workshop participants will learn how to use Terra through the use-case examples, instructor-led live demonstration, and the Bioconductor AnVIL package.</p>
-<p>This workshop is supported by the <a href="https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL">NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)</a></p>
-</div>
-<div id="pre-requisites" class="section level2">
-<h2 class="hasAnchor">
-<a href="#pre-requisites" class="anchor"></a>Pre-requisites</h2>
-<ul>
-<li>Basic knowledge of R syntax</li>
-<li>(optional) <a href="https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra">Terra account setup</a>. Recommended if you want to follow the instructor-led demo section on your own.</li>
-</ul>
-</div>
-<div id="workshop-participation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workshop-participation" class="anchor"></a>Workshop Participation</h2>
-<p>Participants will have the opportunity to access a pre-populated Terra workspace and run examples.</p>
-</div>
-<div id="r-bioconductor-packages-used" class="section level2">
-<h2 class="hasAnchor">
-<a href="#r-bioconductor-packages-used" class="anchor"></a><em>R</em> / <em>Bioconductor</em> packages used</h2>
-<ul>
-<li><a href="https://github.com/Bioconductor/AnVIL">AnVIL</a></li>
-</ul>
-</div>
-<div id="time-outline" class="section level2">
-<h2 class="hasAnchor">
-<a href="#time-outline" class="anchor"></a>Time outline</h2>
+<a href="#cloud-based-genomics-platforms" class="anchor"></a>Cloud-based genomics platforms</h2>
+<p>The rapidly growing size of genomic datasets introduces challenges of data transfer, storage, access, sharing, and computing. Cloud-based genomics platform is one of the solutions and many of them already exist hosting different dataset and analysis tools. Below is the brief example of a few:</p>
 <table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
 <thead><tr class="header">
-<th>Activity</th>
-<th>Time</th>
+<th>Platform</th>
+<th>Hosted Data</th>
+<th>Analysis Tools</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Overview</td>
-<td>5m</td>
+<td><a href="https://anvil.terra.bio/">Terra</a></td>
+<td>CCDG, eMERGE, TCGA, TARGET, TOPMed, etc.</td>
+<td>WDL, Notebooks, <em>RStudio, Galaxy</em>
+</td>
 </tr>
 <tr class="even">
-<td>How to access datasets and workflows</td>
-<td>20m</td>
+<td><a href="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">Seven Bridges</a></td>
+<td>TOPMed</td>
+<td>CWL, Notebook, RStudio</td>
 </tr>
 <tr class="odd">
-<td>Interactive analysis setup and demonstration</td>
-<td>35m</td>
+<td><a href="http://www.cancergenomicscloud.org/">Seven Bridges</a></td>
+<td>TCGA, TARGET, ICGC, etc.</td>
+<td>CWL, Notebook, RStudio</td>
+</tr>
+<tr class="even">
+<td><a href="https://isb-cgc.appspot.com/">ISB-CGC</a></td>
+<td>TCGA, TARGET, etc.</td>
+<td>GCP tools, such as Google BigQuery</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="learning-goals" class="section level2">
+<div id="anvil" class="section level2">
 <h2 class="hasAnchor">
-<a href="#learning-goals" class="anchor"></a>Learning Goals</h2>
+<a href="#anvil" class="anchor"></a>AnVIL</h2>
+<p>In this workshop, we are focusing on Terra. Terra is the analysis platform part of AnVIL (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.</p>
+<p><img src="AnVIL_ecosystem.png"></p>
+</div>
+<div id="terra" class="section level2">
+<h2 class="hasAnchor">
+<a href="#terra" class="anchor"></a>Terra</h2>
+<p>Here are main features Terra provides:<br>
+1. secure remote access to public geneomic data without paying storage<br>
+2. on-demand computational capacity through Groogle Cloud Platform<br>
+3. interactive analysis interfaces such as Jupyter notebook and RStudio<br>
+4. best practice tools and pipelines already implemented</p>
+</div>
+</div>
+<div id="how-to-access-datasets-and-workflows" class="section level1">
+<h1 class="hasAnchor">
+<a href="#how-to-access-datasets-and-workflows" class="anchor"></a>How to access datasets and workflows</h1>
+<div id="setup-terra-account" class="section level2">
+<h2 class="hasAnchor">
+<a href="#setup-terra-account" class="anchor"></a>Setup Terra account</h2>
 <ul>
-<li>Gain familiarity with cloud-based genomics platforms</li>
-<li>Learn how to access data sets and tools provided through Terra</li>
-<li>Learn how to use interactive analysis apps, including group sharing of a workspace and billing</li>
-<li>Understand the benefit and shortcome of Terra</li>
+<li>Instruction on <a href="https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra">Terra account setup</a>.</li>
 </ul>
 </div>
-<div id="specific-objectives" class="section level2">
+<div id="resources" class="section level2">
 <h2 class="hasAnchor">
-<a href="#specific-objectives" class="anchor"></a>Specific objectives</h2>
+<a href="#resources" class="anchor"></a>Resources</h2>
 <ul>
-<li>Setup Terra account</li>
-<li>Clone a public/sharable workspace</li>
-<li>Create a new workspace and import datasets/ workflows/ notebooks</li>
-<li>Use Jupyter notebook and RStudio in Terra</li>
-<li>Use AnVIL package to access Terra and R/Bioconductor resource</li>
+<li><a href="https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces">Intro to working with workspace</a></li>
 </ul>
+<p><img src="menu.png" height="360"></p>
+<div id="library" class="section level3">
+<h3 class="hasAnchor">
+<a href="#library" class="anchor"></a>Library</h3>
+<p><img src="library.png" height="100"></p>
+</div>
+</div>
+<div id="workspace" class="section level2">
+<h2 class="hasAnchor">
+<a href="#workspace" class="anchor"></a>Workspace</h2>
+<p>You can use a Terra workspace to keep all the components of your project - data, metadata, and analysis tools as well as documentation and provenance - together.</p>
+<p><img src="workspace.png"></p>
+<p><strong>1. Dashboard: Documentation and workspace information</strong><br>
+Here is where you describe the research project - what questions you are trying to answer, what kind of data and analyses you will use, etc. Documentation is important! Well-documented workspaces make it easy to share and collaborate. This tab also includes information about the workspace owner and creation date.</p>
+<p><strong>2. Data: Organize and access data-in-the-cloud</strong><br>
+Terra uses tables, which are like built-in spreadsheets, to help access and organize the data you will use. Data can be in your workspace bucket, or in Google Cloud Storage or BigQuery. Tables connect workspace tools to the data with metadata links to the actual location in the cloud.</p>
+<p><strong>3. Notebooks: Interactive analysis</strong><br>
+In the notebooks tab you can launch an in-app Jupyter Notebook and interact with the data using Python or R.</p>
+<p><strong>4. Workflows: Pipelining analysis</strong><br>
+In the workflows tab you will find workflows for bulk analyses.These are the sorts of repetitive analyses that can be automated, such as what you would use to align sequencer reads. Workflows in Terra are written in in Workflow Description Language and are called WDLs.</p>
+<p><strong>5. Job History: Provenance and troubleshooting</strong><br>
+In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.</p>
 </div>
 </div>
   </div>
