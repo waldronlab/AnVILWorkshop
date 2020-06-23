@@ -16,14 +16,12 @@ navbar:
   left:
     - text: Workshop
       menu:
-      - text: How to start
+      - text: How to access datasets and workflows
         href: articles/overview.html
-      - text: Interactive Analysis
+      - text: Interactive analysis setup and demonstration
         href: articles/usecase.html
     - text: Reference
       menu:
-      - text: Cloud Genomics Platforms
-        href: articles/cloud_genomics_platform.html
       - text: AnVIL package
         href: articles/AnVIL_package.html
   right:

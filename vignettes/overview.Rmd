@@ -1,9 +1,11 @@
 ---
-output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Workshop Overview}
+  %\VignetteIndexEntry{AnVIL/Terra Workshop Overview}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+output:
+  html_document:
+    mathjax: null
 ---
 
 
@@ -14,74 +16,65 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Introduction to the Terra/AnVIL Cloud-based Genomics Platform
+# Introduction
 
-## Instructor names and contact information
-Sehyun Oh* <Sehyun.Oh@sph.cuny.edu> [1] \
-Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1] \
-Lori Shepherd <lori.shepherd@roswellpark.org> [2] \
-Nitesh Turaga <Nitesh.Turaga@roswellpark.org> [2] \
-Martin Morgan <martin.morgan@roswellpark.org> [2] \
-BJ Stubbs <rebjh@channing.harvard.edu> [3] \
-Vince Carey <stvjc@channing.harvard.edu> [3] \
+## Cloud-based genomics platforms
+The rapidly growing size of genomic datasets introduces challenges of data transfer, 
+storage, access, sharing, and computing. Cloud-based genomics platform is one of 
+the solutions and many of them already exist hosting different dataset and analysis
+tools. Below is the brief example of a few:
 
-[1] CUNY Graduate School of Public Health and Health Policy and Institute for Implementation Science in Population Health, New York, 10027, USA \
-[2] Roswell Park Comprehensive Cancer Center, Buffalo, New York, 14203, USA \
-[3] Channing Division of Network Medicine, Harvard Medical School, Boston, Massachusetts, 02115, USA \
-   
-   
+|Platform | Hosted Data | Analysis Tools |
+|---|---|---|
+| [Terra](https://anvil.terra.bio/) | CCDG, eMERGE, TCGA, TARGET, TOPMed, etc. | WDL, Notebooks, *RStudio, Galaxy* |
+| [Seven Bridges](https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges) | TOPMed | CWL, Notebook, RStudio |
+| [Seven Bridges](http://www.cancergenomicscloud.org/)| TCGA, TARGET, ICGC, etc. | CWL, Notebook, RStudio |
+| [ISB-CGC](https://isb-cgc.appspot.com/) | TCGA, TARGET, etc. | GCP tools, such as Google BigQuery |
 
-## Workshop Description
+## AnVIL
+In this workshop, we are focusing on Terra. Terra is the analysis platform part 
+of AnVIL (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
 
-The rapidly growing size of genomic datasets introduces 
-challenges of data transfer, storage, access, sharing, and computing. In this workshop, 
-we introduce cloud-based genomics platform [Terra](https://anvil.terra.bio/) 
-as a potential solution. Terra hosts large-scale genomic and genomic-related data 
-sets and provide secure remote access to them and to individually uploaded data resources. Terra
-also provides on-demand computational capacity through Google Cloud Platform, and 
-interactive analysis interfaces such as Jupyter notebook and RStudio. Users can 
-run best practice tools and pipelines already implemented or upload their own
-data or analysis methods to workspaces. Workshop participants will learn how to
-use Terra through the use-case examples, instructor-led live demonstration, and the 
-Bioconductor AnVIL package. 
+![](AnVIL_ecosystem.png)
 
-This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL)
+## Terra
+Here are main features Terra provides:   
+1. secure remote access to public geneomic data without paying storage   
+2. on-demand computational capacity through Groogle Cloud Platform   
+3. interactive analysis interfaces such as Jupyter notebook and RStudio    
+4. best practice tools and pipelines already implemented    
 
 
-## Pre-requisites
-
-* Basic knowledge of R syntax
-* (optional) [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra). Recommended if you want to follow the instructor-led demo section on your own.
-
-## Workshop Participation
-
-Participants will have the opportunity to access a pre-populated Terra workspace and run examples. 
-
-## _R_ / _Bioconductor_ packages used
-
-* [AnVIL](https://github.com/Bioconductor/AnVIL)
-
-## Time outline
-
-| Activity                                              | Time |
-|-------------------------------------------------------|------|
-| Overview                                              | 5m   |
-| How to access datasets and workflows                  | 20m  |
-| Interactive analysis setup and demonstration          | 35m  |
+# How to access datasets and workflows
+## Setup Terra account
+* Instruction on [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra).
 
 
-## Learning Goals
+## Resources
+* [Intro to working with workspace](https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces)
 
-* Gain familiarity with cloud-based genomics platforms
-* Learn how to access data sets and tools provided through Terra
-* Learn how to use interactive analysis apps, including group sharing of a workspace and billing
-* Understand the benefit and shortcome of Terra
- 
-## Specific objectives
+![](menu.png){width=170px, height=360px} 
 
-* Setup Terra account
-* Clone a public/sharable workspace 
-* Create a new workspace and import datasets/ workflows/ notebooks
-* Use Jupyter notebook and RStudio in Terra
-* Use AnVIL package to access Terra and R/Bioconductor resource
-  
+### Library
+![](library.png){width=500px, height=100px}
+
+## Workspace
+You can use a Terra workspace to keep all the components of your project - data, 
+metadata, and analysis tools as well as documentation and provenance - together.
+
+![](workspace.png) 
+
+**1. Dashboard: Documentation and workspace information**  
+Here is where you describe the research project - what questions you are trying to answer, what kind of data and analyses you will use, etc. Documentation is important! Well-documented workspaces make it easy to share and collaborate. This tab also includes information about the workspace owner and creation date. 
+
+**2. Data: Organize and access data-in-the-cloud**    
+Terra uses tables, which are like built-in spreadsheets, to help access and organize the data you will use. Data can be in your workspace bucket, or in Google Cloud Storage or BigQuery. Tables connect workspace tools to the data with metadata links to the actual location in the cloud.
+
+**3. Notebooks: Interactive analysis**   
+In the notebooks tab you can launch an in-app Jupyter Notebook and interact with the data using Python or R. 
+
+**4. Workflows: Pipelining analysis**   
+In the workflows tab you will find workflows for bulk analyses.These are the sorts of repetitive analyses that can be automated, such as what you would use to align sequencer reads. Workflows in Terra are written in in Workflow Description Language and are called WDLs. 
+
+**5. Job History: Provenance and troubleshooting**   
+In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.  

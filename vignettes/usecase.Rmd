@@ -1,28 +1,53 @@
 ---
-title: "usecase"
-output: html_document
+vignette: >
+  %\VignetteIndexEntry{AnVIL/Terra Use Cases}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output:
+  html_document:
+    mathjax: null
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 ```
 
-## R Markdown
+# Use Cases
+## Terra in the classroom 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Interactive analysis
+### Introduction
+[This workspace](https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV) provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [[link](https://ascopubs.org/doi/10.1200/CCI.19.00130)]:    
 
-```{r cars}
-summary(cars)
-```
+**Reliable analysis of clinical tumor-only whole exome sequencing data**       
+Oh *et al.*, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.   
 
-## Including Plots
+The major benefits of having Terra workspace with research paper:   
+- Data storage, pipeline (compute-intense), and downstream analysis are all available in one place   
+- Improved reproducibility   
+- Sharing code and providing additional information not included in the paper are available through this workspace   
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+### Features
+**1. Data**
+Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace   
+Public reference files (stored in GCP, some are directly available through Terra)   
+Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’   
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+**2. Workflows**
+7 WDL workflows, running sequentially   
+Incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,...)
+
+![](workflows.png)
+
+**3. Notebooks**
+Using Custom image: us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor    
+5 notebooks → 4 for data pre-processing and 1 for downstream analysis   
+AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
+
+![](notebooks.png)
