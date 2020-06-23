@@ -1,4 +1,5 @@
 ---
+title: "Interactive analysis setup and demonstration"
 vignette: >
   %\VignetteIndexEntry{AnVIL/Terra Use Cases}
   %\VignetteEngine{knitr::rmarkdown}
@@ -16,13 +17,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Use Cases
+
 ## Terra in the classroom 
 
 
 ## Interactive analysis
 ### Introduction
-[This workspace](https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV) provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [[link](https://ascopubs.org/doi/10.1200/CCI.19.00130)]:    
+[This workspace](https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV) provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [[link](https://ascopubs.org/doi/10.1200/CCI.19.00130)].    
 
 **Reliable analysis of clinical tumor-only whole exome sequencing data**       
 Oh *et al.*, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.   
@@ -34,18 +35,18 @@ The major benefits of having Terra workspace with research paper:
 
 
 ### Features
-**1. Data**
+**1. Data**   
 Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace   
 Public reference files (stored in GCP, some are directly available through Terra)   
 Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’   
 
-**2. Workflows**
+**2. Workflows**   
 7 WDL workflows, running sequentially   
 Incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,...)
 
 ![](workflows.png)
 
-**3. Notebooks**
+**3. Notebooks**   
 Using Custom image: us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor    
 5 notebooks → 4 for data pre-processing and 1 for downstream analysis   
 AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
