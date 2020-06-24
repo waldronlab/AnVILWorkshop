@@ -23,4 +23,4 @@ Suggests:
 URL: https://waldronlab.github.io/AnVILWorkshop/
 BugReports: https://github.com/waldronlab/AnVILWorkshop/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: shbrief/AnVILWorkshop
+DockerImage: shbrief/anvilworkshop
