@@ -1,5 +1,5 @@
 Package: AnVILWorkshop
-Title: Bioconductor Workshop for AnVIL/Terra
+Title: Cloud-based Genomics using Terra/AnVIL
 Version: 0.1.1
 Authors@R: 
     person(given = "Sehyun",
