@@ -44,11 +44,11 @@ Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with
 7 WDL workflows, running sequentially   
 Incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,...)
 
-![](workflows.png)
+![](images/workflows.png)
 
 **3. Notebooks**   
 Using Custom image: us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor    
 5 notebooks → 4 for data pre-processing and 1 for downstream analysis   
 AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
 
-![](notebooks.png)
+![](images/notebooks.png)
