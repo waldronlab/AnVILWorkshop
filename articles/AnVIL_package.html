@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> • AnVILWorkshop</title>
+<title>Introduction to the AnVIL package • AnVILWorkshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to the AnVIL package">
 <meta property="og:description" content="AnVILWorkshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -91,22 +91,380 @@
       </header><script src="AnVIL_package_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip></h1>
-            
+      <h1 data-toc-skip>Introduction to the AnVIL package</h1>
+                        <h4 class="author">Nitesh Turaga</h4>
+            <address class="author_afil">
+      Roswell Park Comprehensive Cancer Center<br><h4 class="author">Vincent Carey</h4>
+                                    <h4 class="author">BJ Stubbs</h4>
+                                    <h4 class="author">Marcel Ramos</h4>
+                                    <h4 class="author">Martin Morgan</h4>
+            <address class="author_afil">
+      Roswell Park Comprehensive Cancer Center<br><a class="author_email" href="mailto:#"></a><a href="mailto:Martin.Morgan@RoswellPark.org" class="email">Martin.Morgan@RoswellPark.org</a>
+      </address>
+                  
       
       <small class="dont-index">Source: <a href="https://github.com/waldronlab/AnVILWorkshop/blob/master/vignettes/AnVIL_package.Rmd"><code>vignettes/AnVIL_package.Rmd</code></a></small>
       <div class="hidden name"><code>AnVIL_package.Rmd</code></div>
 
+    </address>
+</div>
+
+    
+        <div class="abstract">
+      <p class="abstract">Abstract</p>
+      <p>The AnVIL is cloud computing resource developed in part by the National Human Genome Research Institute. The AnVIL package provides end-user and developer functionality. For the end-user, AnVIL provides fast binary package installation, utilities for working with Terra / AnVIL table and data resources, and convenient functions for file movement to and from Google cloud storage. For developers, AnVIL provides programmatic access to the Terra, Leonardo, Dockstore, and Gen3 RESTful programming interface, including helper functions to transform JSON responses to more formats more amenable to manipulation in <em>R</em>.</p>
     </div>
-
     
-    
+<div id="installation" class="section level1">
+<h1 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h1>
+<p>Install the <em>AnVIL</em> package with</p>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span>(<span class="st">"BiocManager"</span>, <span class="kw">quietly</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"BiocManager"</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">"https://cran.r-project.org"</span>)
+<span class="kw pkg">BiocManager</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span>(<span class="st">"AnVIL"</span>)</pre></body></html></div>
+<p>Once installed, load the package with</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">AnVIL</span>)</pre></body></html></div>
+</div>
+<div id="quick-start" class="section level1">
+<h1 class="hasAnchor">
+<a href="#quick-start" class="anchor"></a>Quick start</h1>
+<div id="up-to-speed-with-anvil" class="section level2">
+<h2 class="hasAnchor">
+<a href="#up-to-speed-with-anvil" class="anchor"></a>Up to speed with <em>AnVIL</em>
+</h2>
+<p>The <a href="https://anvilproject.org/">AnVIL project</a> is an analysis, visualization, and informatics cloud-based space for data access, sharing and computing across large genomic-related data sets.</p>
+<p>The <em>AnVIL</em> project supports use of <em>R</em> through Jupyter notebooks and <em>RStudio</em>. Support for <em>RStudio</em> is preliminary as of April 2020.</p>
+<p>This package provides access to <em>AnVIL</em> resources from within the <em>AnVIL</em> cloud, and also from stand-alone computing resources such as a user’s laptop.</p>
+<p>Use of this package requires AnVIL and Google cloud computing billing accounts. Consult <a href="https://anvilproject.org/training/guides">AnVIL training guides</a> for details on establishing these accounts.</p>
+<p>The remainder of this vignette assumes that an AnVIL account has been established and successfully linked to a Google cloud computing billing account.</p>
+</div>
+<div id="use-in-the-anvil-cloud" class="section level2">
+<h2 class="hasAnchor">
+<a href="#use-in-the-anvil-cloud" class="anchor"></a>Use in the AnVIL cloud</h2>
+<p>In the AnVIL cloud environment, click on the <code>RUNTIME</code> button illustrated below and choose the ‘Bioconductor’ runtime. When creating a Jupyter notebook, choose <code>R</code> as the engine. For <em>RStudio</em> use, choose <code>Custom environment</code> and enter the current <code>anvil-rstudio-bioconductor</code> image and version tag. A time of writing, the image is</p>
+<pre><code>us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:0.0.3</code></pre>
+<p>Images are available at Google Cloud Platform <a href="http://us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor">container registry</a>.</p>
+</div>
+<div id="local-use" class="section level2">
+<h2 class="hasAnchor">
+<a href="#local-use" class="anchor"></a>Local use</h2>
+<p>Local use requires that the gcloud SDK is installed, and that the billing account used by AnVIL can be authenticated with the user. These requirements are satisfied when using the AnVIL compute cloud. For local use, one must</p>
+<ul>
+<li><p><a href="https://cloud.google.com/sdk/install">Install</a> the gcloud sdk</p></li>
+<li>
+<p>Define an environment variable or <code><a href="https://rdrr.io/r/base/options.html">option()</a></code> named <code>GCLOUD_SDK_PATH</code> pointing to the root of the SDK installation, e.g,</p>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"GCLOUD_SDK_PATH"</span>), <span class="st">"bin"</span>), <span class="st">"^(gcloud|gsutil)$"</span>)
+<span class="co">## [1] "gcloud" "gsutil"</span></pre></body></html></div>
+<p>Test the installation with <code><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_exists()</a></code></p>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="co">## the code chunks in this vignette are fully evaluated when</span>
+<span class="co">## gcloud_exists() returns TRUE</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_exists</a></span>()
+<span class="co">## [1] FALSE</span></pre></body></html></div>
+</li>
+</ul>
+</div>
+</div>
+<div id="for-end-users" class="section level1">
+<h1 class="hasAnchor">
+<a href="#for-end-users" class="anchor"></a>For end users</h1>
+<div id="fast-binary-package-installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#fast-binary-package-installation" class="anchor"></a>Fast binary package installation</h2>
+<p>The AnVIL cloud compute environment makes use of docker containers with defined installations of binary system software. It is thus possible to archive pre-built ‘binary’ <em>R</em> packages, and to install these without requiring compilation. The AnVIL function <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">install()</a></code> arranges to install binary packages (when these are available) and current; it defaults to installing packages from source using standard <code><a href="https://rdrr.io/pkg/BiocManager/man/install.html">BiocManager::install()</a></code> facilities.</p>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">AnVIL</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">install</a></span>(<span class="st">"GenomicFeatures"</span>)</pre></body></html></div>
+<p>Thus <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">AnVIL::install()</a></code> can be used as an improved method for installing <em>CRAN</em> and <em>Bioconductor</em> packages.</p>
+<p>Because package installation is fast, it can be convenient to install packages into libraries on a project-specific basis, e.g., to create a ‘snapshot’ of packages for reproducible analysis. Use</p>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">add_libpaths</a></span>(<span class="st">"~/my/project"</span>)</pre></body></html></div>
+<p>as a convenient way to prepend a project-specific library path to <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code>. New packages will be installed into this library.</p>
+</div>
+<div id="working-with-google-cloud-based-resources" class="section level2">
+<h2 class="hasAnchor">
+<a href="#working-with-google-cloud-based-resources" class="anchor"></a>Working with Google cloud-based resources</h2>
+<p>The AnVIL package implements functions to facilitate access to Google cloud resources.</p>
+<div id="using-gcloud_-for-account-management" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#using-gcloud_-for-account-management" class="anchor"></a>Using <code>gcloud_*()</code> for account management</h3>
+<p>The <code>gcloud_*()</code> family of functions provide access to Google cloud functions implemented by the <code>gcloud</code> binary. <code><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_project()</a></code> returns the current billing account.</p>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_account</a></span>() <span class="co"># authentication account</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_project</a></span>() <span class="co"># billing project information</span></pre></body></html></div>
+<p>A convenient way to access <em>any</em> <code>gcloud</code> SDK command is to use <code><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_cmd()</a></code>, e.g.,</p>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_cmd</a></span>(<span class="st">"projects"</span>, <span class="st">"list"</span>) <span class="kw">%&gt;%</span>
+    <span class="kw pkg">readr</span><span class="kw ns">::</span><span class="fu">read_table</span>() <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/startsWith.html">startsWith</a></span>(<span class="no">PROJECT_ID</span>, <span class="st">"anvil"</span>))</pre></body></html></div>
+<p>This translates into the command line <code>gcloud projects list</code>. Help is also available within <em>R</em>, e.g.,</p>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_help</a></span>(<span class="st">"projects"</span>)</pre></body></html></div>
+<p>Use <code><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_help()</a></code> (with no arguments) for an overview of available commands.</p>
+</div>
+<div id="using-gsutil_-for-file-and-bucket-management" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#using-gsutil_-for-file-and-bucket-management" class="anchor"></a>Using <code>gsutil_*()</code> for file and bucket management</h3>
+<p>The <code>gsutil_*()</code> family of functions provides an interface to google bucket manipulation. The following refers to publicly available 1000 genomes data available in Google Cloud Storage.</p>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">src</span> <span class="kw">&lt;-</span> <span class="st">"gs://genomics-public-data/1000-genomes/"</span></pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_ls()</a></code> lists bucket content; <code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_stat()</a></code> additional detail about fully-specified buckets.</p>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_ls</a></span>(<span class="no">src</span>)
 
+<span class="no">other</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">src</span>, <span class="st">"other"</span>)
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_ls</a></span>(<span class="no">other</span>, <span class="kw">recursive</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="no">sample_info</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">src</span>, <span class="st">"other/sample_info/sample_info.csv"</span>)
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_stat</a></span>(<span class="no">sample_info</span>)</pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_cp()</a></code> copies buckets from or to Google cloud storage; copying to cloud storage requires write permission, of course. One or both of the arguments can be cloud endpoints.</p>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">fl</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span>()
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_cp</a></span>(<span class="no">sample_info</span>, <span class="no">fl</span>)
+
+<span class="no">csv</span> <span class="kw">&lt;-</span> <span class="kw pkg">readr</span><span class="kw ns">::</span><span class="fu">read_csv</span>(<span class="no">fl</span>, <span class="kw">guess_max</span> <span class="kw">=</span> <span class="fl">5000L</span>)
+<span class="no">csv</span></pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_pipe()</a></code> provides a streaming interface that does not require intermediate disk storage.</p>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">pipe</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_pipe</a></span>(<span class="no">fl</span>)
+<span class="kw pkg">readr</span><span class="kw ns">::</span><span class="fu">read_csv</span>(<span class="no">pipe</span>, <span class="kw">guess_max</span> <span class="kw">=</span> <span class="fl">5000L</span>) <span class="kw">%&gt;%</span>
+    <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="st">"Sample"</span>, <span class="st">"Family_ID"</span>, <span class="st">"Population"</span>, <span class="st">"Gender"</span>)</pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_rsync()</a></code> synchronizes a local file hierarchy with a remote bucket. This can be a powerful operation when <code>delete = TRUE</code> (removing local or remote files), and has default option <code>dry = TRUE</code> to indicate the consequences of the sync.</p>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">destination</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span>()
+<span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span>(<span class="no">destination</span>))
+<span class="no">source</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">src</span>, <span class="st">"other/sample_info"</span>)
+
+<span class="co">## dry run</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_rsync</a></span>(<span class="no">source</span>, <span class="no">destination</span>)
+
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_rsync</a></span>(<span class="no">source</span>, <span class="no">destination</span>, <span class="kw">dry</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>(<span class="no">destination</span>, <span class="kw">recursive</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="co">## nothing to synchronize</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_rsync</a></span>(<span class="no">source</span>, <span class="no">destination</span>, <span class="kw">dry</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+
+<span class="co">## one file requires synchronization</span>
+<span class="fu"><a href="https://rdrr.io/r/base/unlink.html">unlink</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="no">destination</span>, <span class="st">"README"</span>))
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_rsync</a></span>(<span class="no">source</span>, <span class="no">destination</span>, <span class="kw">dry</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">localize()</a></code> and <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">delocalize()</a></code> provide ‘one-way’ synchronization. <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">localize()</a></code> moves the content of the <code>gs://</code> <code>source</code> to the local file system. <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">localize()</a></code> could be used at the start of an analysis to retrieve data stored in the google cloud to the local compute instance. <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">delocalize()</a></code> performs the complementary operation, copying local files to a <code>gs://</code> destination. The <code>unlink = TRUE</code> option to <code><a href="https://rdrr.io/pkg/AnVIL/man/localize.html">delocalize()</a></code> unlinks local <code>source</code> files recursively. It could be used at the end of an analysis to move results to the cloud for long-term persistent storage.</p>
+</div>
+</div>
+<div id="using-av-to-work-with-anvil-tables-and-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#using-av-to-work-with-anvil-tables-and-data" class="anchor"></a>Using <code>av*()</code> to work with AnVIL tables and data</h2>
+<div id="tables-reference-data-and-persistent-files" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#tables-reference-data-and-persistent-files" class="anchor"></a>Tables, reference data, and persistent files</h3>
+<p>AnVIL organizes data and analysis environments into ‘workspaces’. AnVIL-provided data resources in a workspace are managed under the ‘DATA’ tab as ‘TABLES’, ‘REFERENCE DATA’, and ‘OTHER DATA’; the latter includes ‘’Workspace Data’ and ‘Files’, with ‘Files’ corresponding to a google cloud bucket associated with the workspace. These components of the graphical user interface are illustrated in the figure below.</p>
+<p>The AnVIL package provides programmatic tools to access different components of the data workspace, as summarized in the following table.</p>
+<table class="table">
+<thead><tr class="header">
+<th>Workspace</th>
+<th>AnVIL function</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>TABLES</td>
+<td><code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtables()</a></code></td>
+</tr>
+<tr class="even">
+<td>REFERENCE DATA</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td>OTHER DATA</td>
+<td><code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avbucket()</a></code></td>
+</tr>
+<tr class="even">
+<td>Workspace Data</td>
+<td><code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avdata()</a></code></td>
+</tr>
+<tr class="odd">
+<td>Files</td>
+<td>
+<code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_ls()</a></code>, <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_backup()</a></code>, <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_restore()</a></code>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Data tables in a workspace are available by specifying the <code>namespace</code> (billing account) and <code>name</code> (workspace name) of the workspace. When on the AnVIL in a Jupyter notebook or RStudio, this information can be discovered with</p>
+<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avworkspace_namespace</a></span>()
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avworkspace_name</a></span>()</pre></body></html></div>
+<p>It is also possible to specify, when not in the AnVIL compute environment, the data resource to work with.</p>
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="co">## N.B.: IT MAY NOT BE NECESSARY TO SET THESE WHEN ON ANVIL</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avworkspace_namespace</a></span>(<span class="st">"pathogen-genomic-surveillance"</span>)
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avworkspace_name</a></span>(<span class="st">"COVID-19"</span>)</pre></body></html></div>
+</div>
+<div id="using-avtable-for-accessing-tables" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#using-avtable-for-accessing-tables" class="anchor"></a>Using <code>avtable*()</code> for accessing tables</h3>
+<p>Accessing data tables use the <code>av*()</code> functions. Use <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtables()</a></code> to discover available tables, and <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtable()</a></code> to retrieve a particular table</p>
+<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtables</a></span>()
+<span class="no">sample</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtable</a></span>(<span class="st">"sample"</span>)
+<span class="no">sample</span></pre></body></html></div>
+<p>The data in the table can then be manipulated using standard <em>R</em> commands, e.g., to identify SRA samples for which a final assembly fasta file is available.</p>
+<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="no">sample</span> <span class="kw">%&gt;%</span>
+    <span class="fu">select</span>(<span class="no">name</span>, <span class="fu">contains</span>(<span class="st">"fasta"</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(!<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">final_assembly_fasta</span>))</pre></body></html></div>
+<p>Users can easily add tables to their own workspace using <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtable_import()</a></code>, perhaps as the final stage of a pipe</p>
+<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="no">mtcars</span> <span class="kw">%&gt;%</span>
+    <span class="fu">mutate</span>(<span class="kw">cyl</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">cyl</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtable_import</a></span>()</pre></body></html></div>
+<p>The <code>TABLES</code> data in a workspace are usually provided as curated results from AnVIL. Nonetheless, it can sometimes be useful to delete individual rows from a table. Use <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avtable_delete_values()</a></code>.</p>
+</div>
+<div id="using-avdata-for-accessing-workspace-data" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#using-avdata-for-accessing-workspace-data" class="anchor"></a>Using <code>avdata()</code> for accessing Workspace Data</h3>
+<p>The ‘Workspace Data’ is accessible through <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avdata()</a></code> (the example below shows that some additional parsing may be necessary).</p>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avdata</a></span>()</pre></body></html></div>
+</div>
+<div id="using-avbucket-and-workspace-files" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#using-avbucket-and-workspace-files" class="anchor"></a>Using <code>avbucket()</code> and workspace files</h3>
+<p>Each workspace is associated with a google bucket, with the content summarized in the ‘Files’ portion of the workspace. The location of the files is</p>
+<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">bucket</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avbucket</a></span>()
+<span class="no">bucket</span></pre></body></html></div>
+<p>The content of the bucket can be viewed with</p>
+<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_ls</a></span>()</pre></body></html></div>
+<p>If the workspace is owned by the user, then persistent data can be written to the bucket.</p>
+<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="co">## requires workspace ownership</span>
+<span class="no">uri</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avbucket</a></span>()                             <span class="co"># discover bucket</span>
+<span class="no">bucket</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="no">uri</span>, <span class="st">"mtcars.tab"</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_pipe</a></span>(<span class="no">bucket</span>, <span class="st">"w"</span>)) <span class="co"># write to bucket</span></pre></body></html></div>
+<p>A particularly convenient operation is to back up files or directories from the compute node to the bucket</p>
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="co">## backup all files and folders in the current working directory</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_backup</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span>(), <span class="kw">recursive</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="co">## backup all files in the current directory</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_backup</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>())
+
+<span class="co">## backup all files to gs://&lt;avbucket()&gt;/scratch/</span>
+<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_backup</a></span>(<span class="no">dir</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avbucket</a></span>(), <span class="st">"/scratch"</span>))</pre></body></html></div>
+<p>Note that the backup operations have file naming behavior like the Linux <code>cp</code> command; details are described in the help page <code><a href="https://rdrr.io/pkg/AnVIL/man/gsutil.html">gsutil_help("cp")</a></code>.</p>
+<p>Use <code><a href="https://rdrr.io/pkg/AnVIL/man/av.html">avfiles_restore()</a></code> to restore files or directories from the workspace bucket to the compute node.</p>
+</div>
+</div>
+<div id="example-work-flows" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-work-flows" class="anchor"></a>Example work flows</h2>
+<p>Example work flows will be developed as experience with the AnVIL cloud increases.</p>
+</div>
+</div>
+<div id="for-developers" class="section level1">
+<h1 class="hasAnchor">
+<a href="#for-developers" class="anchor"></a>For developers</h1>
+<div id="set-up" class="section level2">
+<h2 class="hasAnchor">
+<a href="#set-up" class="anchor"></a>Set-up</h2>
+</div>
+<div id="service-apis" class="section level2">
+<h2 class="hasAnchor">
+<a href="#service-apis" class="anchor"></a>Service APIs</h2>
+<p>AnVIL applications are exposed to the developer through RESTful API services. Each service is represented in <em>R</em> as an object. The object is created by invoking a constructor, sometimes with arguments. We illustrate basic functionality with the <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Terra()</a></code> service.</p>
+<p>Currently, APIs using the OpenAPI Specification (OAS) Version 2 (formerly known as Swagger) are supported. AnVIL makes use of the <a href="https://cran.r-project.org/package=rapiclient">rapiclient</a> codebase to provide a unified representation of the API protocol.</p>
+<div id="construction" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#construction" class="anchor"></a>Construction</h3>
+<p>Create an instance of the service. This consults a Swagger / OpenAPI schema corresponding to the service to create an object that knows about available endpoints. Terra / AnVIL project services usually have Swagger / OpenApi-generated documentation, e.g., for the <a href="https://api.firecloud.org">Terra service</a>.</p>
+<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="no">terra</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Terra</a></span>()</pre></body></html></div>
+<p>Printing the return object displays a brief summary of endpoints</p>
+<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="no">terra</span></pre></body></html></div>
+<p>The schema for the service groups endpoints based on tag values, providing some level of organization when exploring the service. Tags display consists of endpoints (available as a tibble with <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">tags(terra)</a></code>).</p>
+<div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="no">terra</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">tags</a></span>(<span class="st">"Status"</span>)</pre></body></html></div>
+</div>
+<div id="invoke-endpoints" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#invoke-endpoints" class="anchor"></a>Invoke endpoints</h3>
+<p>Access an endpoint with <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>; without parentheses <code>()</code> this generates a brief documentation string (derived from the schema specification. Including parentheses (and necessary arguments) invokes the endpoint.</p>
+<div class="sourceCode" id="cb29"><html><body><pre class="r"><span class="no">terra</span>$<span class="no">status</span>
+<span class="no">terra</span>$<span class="fu">status</span>()</pre></body></html></div>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">operations()</a></code> and <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">schemas()</a></code> return a named list of endpoints, and of argument and return value schemas. <code>operations(terra)$XXX()</code> can be used an alternative to direct invocation <code>terra$XXX()</code>. <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">schemas()</a></code> can be used to construct function arguments with complex structure.</p>
+<p><code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">empty_object()</a></code> is a convenience function to construct an ‘empty’ object (named list without content) required by some endpoints.</p>
+</div>
+<div id="process-responses" class="section level3 unnumbered">
+<h3 class="hasAnchor">
+<a href="#process-responses" class="anchor"></a>Process responses</h3>
+<p>Endpoints return objects of class <code>response</code>, defined in the <a href="https://cran.r-project.org/package=httr">httr</a> package</p>
+<div class="sourceCode" id="cb30"><html><body><pre class="r"><span class="no">status</span> <span class="kw">&lt;-</span> <span class="no">terra</span>$<span class="fu">status</span>()
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span>(<span class="no">status</span>)</pre></body></html></div>
+<p>Several convenience functions are available to help developers transform return values into representations that are more directly useful.</p>
+<p><code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> is invoked for the side-effect of displaying the list-like structure of the response. Note that this is not the literal structure of the <code>response</code> object (use <code><a href="https://rdrr.io/r/utils/str.html">utils::str(status)</a></code> for that), but rather the structure of the JSON response received from the service.</p>
+<div class="sourceCode" id="cb31"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">status</span>)</pre></body></html></div>
+<p><code><a href="https://rdrr.io/r/base/list.html">as.list()</a></code> returns the JSON response as a list, and <code><a href="https://rdrr.io/pkg/AnVIL/man/Response.html">flatten()</a></code> attempts to transform the list into a tibble. <code><a href="https://rdrr.io/pkg/AnVIL/man/Response.html">flatten()</a></code> is effective when the response is in fact a JSON row-wise representation of tibble-like data.</p>
+<div class="sourceCode" id="cb32"><html><body><pre class="r"><span class="no">lst</span> <span class="kw">&lt;-</span> <span class="no">status</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span>()
+<span class="fu"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span>(<span class="no">lst</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span>(<span class="no">lst</span>$<span class="no">systems</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">lst</span>$<span class="no">systems</span>)</pre></body></html></div>
+<!-- FIXME: good flatten() example -->
+</div>
+</div>
+<div id="service-implementations" class="section level2">
+<h2 class="hasAnchor">
+<a href="#service-implementations" class="anchor"></a>Service implementations</h2>
+<p>The AnVIL package implements and has made extensive use of the following services:</p>
+<ul>
+<li>
+<em>Terra</em> (<a href="https://api.firecloud.org/" class="uri">https://api.firecloud.org/</a>; <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Terra()</a></code>) provides access to terra account and workspace management.</li>
+</ul>
+<ul>
+<li>
+<em>Leonardo</em> (<a href="https://leonardo.dev.anvilproject.org/" class="uri">https://leonardo.dev.anvilproject.org/</a>; <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Leonardo()</a></code>) implements an interface to the AnVIL container deployment service, useful for management Jupyter notebook and RStudio sessions running in the AnVIL compute cloud.</li>
+</ul>
+<p>The <em>Dockstore</em> service (<a href="https://dockstore.org/swagger.json" class="uri">https://dockstore.org/swagger.json</a>, <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Dockstore()</a></code>) is available but has received limited testing. <em>Dockstore</em> is used to run CWL- or WDL-based work flows, including workflows using <em>R</em> / <em>Bioconductor</em>. See the separate vignette ‘Dockstore and <em>Bioconductor</em> for AnVIL’ for initial documentation.</p>
+<p><em>Gen3</em> services (<a href="https://raw.githubusercontent.com/uc-cdis" class="uri">https://raw.githubusercontent.com/uc-cdis</a>) can be created, but functionality is untested. The services are <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Gen3Fence()</a></code> (authentication), <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Gen3Indexd()</a></code> (indexing service), <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Gen3Peregrine()</a></code> (graphQL queries), and <code><a href="https://rdrr.io/pkg/AnVIL/man/Services.html">Gen3Sheepdog()</a></code> (submission services).</p>
+</div>
+<div id="extending-the-service-class-to-implement-your-own-restful-interface" class="section level2">
+<h2 class="hasAnchor">
+<a href="#extending-the-service-class-to-implement-your-own-restful-interface" class="anchor"></a>Extending the <code>Service</code> class to implement your own RESTful interface</h2>
+<p>The AnVIL package provides useful functionality for exposing other RESTful services represented in Swagger. To use this in other packages,</p>
+<ul>
+<li>
+<p>Add to the package DESCRIPTION file</p>
+<pre><code>Imports: AnVIL</code></pre>
+</li>
+<li>
+<p>Arrange (e.g., via roxygen2 <code>@importFrom</code>, etc.) for the NAMESPACE file to contain</p>
+<pre><code>importFrom AnVIL, Service
+importMethodsFrom AnVIL, "$"   # pehaps also `tags()`, etc
+importClassesFrom AnVIL, Service</code></pre>
+</li>
+<li>
+<p>Implement your own class definition and constructor. Use <code><a href="https://rdrr.io/pkg/AnVIL/man/Service.html">?Service</a></code> to provide guidance on argument specification. For instance, to re-implement the terra service.</p>
+<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">.MyService</span> <span class="kw">&lt;-</span> <span class="fu">setClass</span>(<span class="st">"MyService"</span>, <span class="kw">contains</span> <span class="kw">=</span> <span class="st">"Service"</span>)
+
+<span class="no">MyService</span> <span class="kw">&lt;-</span>
+    <span class="kw">function</span>()
+{
+    <span class="fu">.MyService</span>(<span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/Service.html">Service</a></span>(
+        <span class="st">"myservice"</span>,
+        <span class="kw">host</span> <span class="kw">=</span> <span class="st">"api.firecloud.org"</span>,
+        <span class="kw">api_url</span> <span class="kw">=</span> <span class="st">"https://api.firecloud.org/api-docs.yaml"</span>,
+        <span class="kw">authenticate</span> <span class="kw">=</span> <span class="fl">FALSE</span>
+    ))
+}</pre></body></html></div>
+</li>
+</ul>
+<p>Use <code>api_reference_url</code> and <code>api_reference_md5sum</code> of <code><a href="https://rdrr.io/pkg/AnVIL/man/Service.html">Service()</a></code> as a mechanism to provide some confidence that the service created by the user at runtime is consistent with the service intended by the developer.</p>
+</div>
+</div>
+<div id="support-bug-reports-and-source-code-availability" class="section level1">
+<h1 class="hasAnchor">
+<a href="#support-bug-reports-and-source-code-availability" class="anchor"></a>Support, bug reports, and source code availability</h1>
+<p>For user support, please ask for help on the <em>Bioconductor</em> <a href="https://support.bioconductor.org">support site</a>. Remember to tag your question with ‘AnVIL’, so that the maintainer is notified. Ask for developer support on the <a href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">bioc-devel</a> mailing list.</p>
+<p>Please report bugs as ‘issues’ on <a href="https://github.com/Bioconductor/AnVIL">GitHub</a>.</p>
+<p>Retrieve the source code for this package from it’s canonical location.</p>
+<pre><code>git clone https://git.bioconductor.org/packages/AnVIL</code></pre>
+<p>The package source code is also available on <a href="https://github.com/Bioconductor/AnVIL">GitHub</a></p>
+</div>
+<div id="appendix" class="section level1 unnumbered">
+<h1 class="hasAnchor">
+<a href="#appendix" class="anchor"></a>Appendix</h1>
+<div id="acknowledgments" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
+<p>Research reported in this software package was supported by the US National Human Genomics Research Institute of the National Institutes of Health under award number <a href="https://projectreporter.nih.gov/project_info_description.cfm?aid=9789931&amp;icde=49694078">U24HG010263</a>. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</p>
+</div>
+<div id="session-info" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#session-info" class="anchor"></a>Session info</h2>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

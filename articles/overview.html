@@ -149,43 +149,28 @@
 <a href="#terra" class="anchor"></a>Terra</h2>
 <p>In this workshop, we are focusing on Terra. Terra is the analysis platform of <a href="https://anvilproject.org/">AnVIL</a> (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.</p>
 <div class="figure">
-<img src="AnVIL_ecosystem.png" alt=""><p class="caption">(From MaGIC Jamboree)</p>
+<img src="images/AnVIL_ecosystem.png" alt=""><p class="caption">(From MaGIC Jamboree)</p>
 </div>
 <p>Terra provides:<br>
-1. secure remote access to public geneomic data without paying storage<br>
-2. on-demand computational capacity through Groogle Cloud Platform<br>
-3. interactive analysis interfaces such as Jupyter notebook and RStudio<br>
-4. best practice tools and pipelines already implemented</p>
-</div>
-</div>
-<div id="how-to-access-datasets-and-workflows" class="section level1">
-<h1 class="hasAnchor">
-<a href="#how-to-access-datasets-and-workflows" class="anchor"></a>How to access datasets and workflows</h1>
-<div id="setup-terra-account" class="section level2">
-<h2 class="hasAnchor">
-<a href="#setup-terra-account" class="anchor"></a>Setup Terra account</h2>
+1. <strong>[Data]</strong> secure remote access to public geneomic data without paying storage<br>
+2. <strong>[Workflows]</strong> best practice tools and pipelines already implemented<br>
+3. <strong>[Notebooks]</strong> interactive analysis interfaces such as Jupyter notebook and RStudio<br>
+4. on-demand computational capacity through Google Cloud Platform</p>
+<div id="setup-terra-account" class="section level3">
+<h3 class="hasAnchor">
+<a href="#setup-terra-account" class="anchor"></a>Setup Terra account</h3>
 <ul>
 <li>Instruction on <a href="https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra">Terra account setup</a>.</li>
 </ul>
 </div>
-<div id="resources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#resources" class="anchor"></a>Resources</h2>
-<ul>
-<li><a href="https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces">Intro to working with workspace</a></li>
-</ul>
-<p><img src="menu.png" height="360"></p>
-<div id="library" class="section level3">
-<h3 class="hasAnchor">
-<a href="#library" class="anchor"></a>Library</h3>
-<p><img src="library.png" height="100"></p>
 </div>
 </div>
-<div id="workspace" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workspace" class="anchor"></a>Workspace</h2>
-<p>You can use a Terra workspace to keep all the components of your project - data, metadata, and analysis tools as well as documentation and provenance - together.</p>
-<p><img src="workspace.png"></p>
+<div id="workspace" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workspace" class="anchor"></a>Workspace</h1>
+<p>Workspace is the main buildling block of Terra, where different resources are delivered through. Depending on your goal, you can use workspace for hosting data, building production pipelines, colleting analysis templates, or all of above! - You can use a Terra workspace to keep all the components of your project - data, metadata, and analysis tools as well as documentation and provenance - together.</p>
+<p>You can find more detail about workspace in here: <a href="https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces">Intro to working with workspace</a></p>
+<p><img src="images/workspace.png"></p>
 <p><strong>1. Dashboard: Documentation and workspace information</strong><br>
 Here is where you describe the research project - what questions you are trying to answer, what kind of data and analyses you will use, etc. Documentation is important! Well-documented workspaces make it easy to share and collaborate. This tab also includes information about the workspace owner and creation date.</p>
 <p><strong>2. Data: Organize and access data-in-the-cloud</strong><br>
@@ -196,7 +181,32 @@ In the notebooks tab you can launch an in-app Jupyter Notebook and interact with
 In the workflows tab you will find workflows for bulk analyses.These are the sorts of repetitive analyses that can be automated, such as what you would use to align sequencer reads. Workflows in Terra are written in in Workflow Description Language and are called WDLs.</p>
 <p><strong>5. Job History: Provenance and troubleshooting</strong><br>
 In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.</p>
+<div id="prebuild-workspace-examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#prebuild-workspace-examples" class="anchor"></a>Prebuild workspace examples</h2>
+<p><a href="https://app.terra.bio/#workspaces/help-gatk/Bioconductor">Biocondoctor Workspace</a></p>
 </div>
+<div id="demo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#demo" class="anchor"></a>Demo</h2>
+<ol style="list-style-type: decimal">
+<li>Create a new workspace<br>
+</li>
+<li>Use an existing workspace<br>
+</li>
+<li>Share a workspace with others</li>
+</ol>
+</div>
+</div>
+<div id="how-to-access-datasets" class="section level1">
+<h1 class="hasAnchor">
+<a href="#how-to-access-datasets" class="anchor"></a>How to access datasets</h1>
+<p><img src="images/menu.png" height="300"></p>
+</div>
+<div id="how-to-access-workflows" class="section level1">
+<h1 class="hasAnchor">
+<a href="#how-to-access-workflows" class="anchor"></a>How to access workflows</h1>
+<p><img src="images/library.png" height="100"></p>
 </div>
   </div>
 
