@@ -36,33 +36,29 @@ tools. Below is the brief example of a few:
 In this workshop, we are focusing on Terra. Terra is the analysis platform  of [AnVIL](https://anvilproject.org/) 
 (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
 
-![(From MaGIC Jamboree)](AnVIL_ecosystem.png)
+![(From MaGIC Jamboree)](images/AnVIL_ecosystem.png)
 
 Terra provides:   
-1. secure remote access to public geneomic data without paying storage   
-2. on-demand computational capacity through Groogle Cloud Platform   
-3. interactive analysis interfaces such as Jupyter notebook and RStudio    
-4. best practice tools and pipelines already implemented    
+1. **[Data]** secure remote access to public geneomic data without paying storage    
+2. **[Workflows]** best practice tools and pipelines already implemented    
+3. **[Notebooks]** interactive analysis interfaces such as Jupyter notebook and RStudio    
+4. on-demand computational capacity through Google Cloud Platform   
 
-
-# How to access datasets and workflows
-## Setup Terra account
+### Setup Terra account
 * Instruction on [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra).
 
 
-## Resources
-* [Intro to working with workspace](https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces)
 
-![](menu.png){width=170px, height=360px} 
+# Workspace
+Workspace is the main buildling block of Terra, where different resources are delivered 
+through. Depending on your goal, you can use workspace for hosting data, building production
+pipelines, colleting analysis templates, or all of above! - You can use a Terra 
+workspace to keep all the components of your project - data, metadata, and analysis 
+tools as well as documentation and provenance - together.
 
-### Library
-![](library.png){width=500px, height=100px}
+You can find more detail about workspace in here: [Intro to working with workspace](https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces)
 
-## Workspace
-You can use a Terra workspace to keep all the components of your project - data, 
-metadata, and analysis tools as well as documentation and provenance - together.
-
-![](workspace.png) 
+![](images/workspace.png) 
 
 **1. Dashboard: Documentation and workspace information**  
 Here is where you describe the research project - what questions you are trying to answer, what kind of data and analyses you will use, etc. Documentation is important! Well-documented workspaces make it easy to share and collaborate. This tab also includes information about the workspace owner and creation date. 
@@ -78,3 +74,21 @@ In the workflows tab you will find workflows for bulk analyses.These are the sor
 
 **5. Job History: Provenance and troubleshooting**   
 In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.  
+
+
+## Prebuild workspace examples
+[Biocondoctor Workspace](https://app.terra.bio/#workspaces/help-gatk/Bioconductor)
+
+## Demo
+1. Create a new workspace   
+2. Use an existing workspace   
+3. Share a workspace with others   
+
+
+# How to access datasets
+![](images/menu.png){width=140px, height=300px} 
+
+# How to access workflows
+![](images/library.png){width=500px, height=100px}
+
+
