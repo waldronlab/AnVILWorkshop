@@ -11,7 +11,8 @@ author:
   email: Martin.Morgan@RoswellPark.org
 package: AnVIL
 output:
-  BiocStyle::html_document
+  html_document:
+    mathjax: null
 abstract: |
   The AnVIL is cloud computing resource developed in part by the
   National Human Genome Research Institute. The AnVIL package provides
