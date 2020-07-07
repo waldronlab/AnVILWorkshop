@@ -18,10 +18,49 @@ knitr::opts_chunk$set(
 ```
 
 
-## Terra in the classroom 
+# Terra in the classroom 
+### Control Billing
+**How to setup:**   
+Need a [Google Cloud Platform billing account](https://console.cloud.google.com/)   
+- Can use educational credits billing account   
+- Can use [Onix billing account](https://www.onixnet.com/onspend-cloud-billing)   
+- Can use regular billing account backed by credit card   
+
+**Positives:**   
+- Each student selects a compute environment with known cost per hour:    
+each student can select what they need     
+- Terra auto-suspend of notebook runtimes helped keep costs low     
+- Students only have to login, don’t have to set up billing
+
+**Negatives:**   
+- Each student selects a compute environment with known cost per hour:      
+No way to identify an over-spending student or to limit what runtime they must use   
+- No cost breakdown per student
+
+**Notes:**   
+- Billing is post-pay (you can find out how much has been spent with ~24h delay)
 
 
-## Interactive analysis
+### Share Workspace
+Terra workspace allows setup of a lecture or lab in advance of sharing it, where 
+everyone uses the same runtime environment - no setup or compatibility issues. Also, 
+creating runtime is very intutive with the cost/hr information. 
+
+**How to share:**   
+1) Collect Google emails of all students (if institution is using GSuite, can be institutional emails)   
+2) “Create a new group” at https://app.terra.bio/#groups (Note: group name must be (universally?) unique)   
+3) Scroll down or type to find this group, and click   
+4) Click “Add User” and enter email address. Repeat for each email address   
+
+**Benefits:**   
+- Workspaces can be shared with group in one step   
+- Read/write/own options   
+- Can share compute resources on any particular workspace   
+- Can remove or change permissions or group members at any time   
+- Set permissions per workspace   
+
+
+# CNV/SNV Analysis from tumor-only WES
 ### Introduction
 [This workspace](https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV) provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [[link](https://ascopubs.org/doi/10.1200/CCI.19.00130)].    
 
