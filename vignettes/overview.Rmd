@@ -32,7 +32,7 @@ tools. Below is the brief example of a few:
 | [ISB-CGC](https://isb-cgc.appspot.com/) | TCGA, TARGET, etc. | GCP tools, such as Google BigQuery |
 
 
-## Terra
+### Terra
 In this workshop, we are focusing on Terra. Terra is the analysis platform  of [AnVIL](https://anvilproject.org/) 
 (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
 
@@ -47,6 +47,18 @@ Terra provides:
 ### Setup Terra account
 * Instruction on [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra).
 
+## What kind of analysis can you do on Terra?
+Currently, [Terra supports two modes of analysis](https://support.terra.bio/hc/en-us/articles/360022714931-What-kind-of-analysis-can-you-do-on-Terra-). 
+
+1. **Batch processing** with workflows, which includes but is not limited to:   
+Read alignment   
+Variant calling   
+Joint filtering   
+
+2. **Interactive analysis**, which includes but is not limited to:   
+R/Python-based downstream analysis   
+BigQuery   
+Hail   
 
 
 # Workspace
