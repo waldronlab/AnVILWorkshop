@@ -33,16 +33,16 @@ tools. Below is the brief example of a few:
 
 
 ### Terra
-In this workshop, we are focusing on Terra. Terra is the analysis platform  of [AnVIL](https://anvilproject.org/) 
-(Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
+In this workshop, we are focusing on Terra. Terra is the analysis platform  of [AnVIL](https://anvilproject.org/) (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
+
+Terra provides:   
+**1. [Data]** secure remote access to public geneomic data without paying storage (powered by [GEN3](https://gen3.org/))       
+**2. [Workflows]** best practice tools and pipelines already implemented (powered by [Dockstore](https://dockstore.org/))    
+**3. [Notebooks]** interactive analysis interfaces such as Jupyter notebook, RStudio, and Galaxy       
+**4. On-demand computational capacity** through Google Cloud Platform   
 
 ![(From MaGIC Jamboree)](images/AnVIL_ecosystem.png)
 
-Terra provides:   
-1. **[Data]** secure remote access to public geneomic data without paying storage    
-2. **[Workflows]** best practice tools and pipelines already implemented    
-3. **[Notebooks]** interactive analysis interfaces such as Jupyter notebook and RStudio    
-4. on-demand computational capacity through Google Cloud Platform   
 
 ### Setup Terra account
 * Instruction on [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra).
@@ -50,19 +50,19 @@ Terra provides:
 ### What kind of analysis can you do on Terra?
 Currently, [Terra supports two modes of analysis](https://support.terra.bio/hc/en-us/articles/360022714931-What-kind-of-analysis-can-you-do-on-Terra-). 
 
-1. **Batch processing** with workflows, which includes but is not limited to:   
+**1. Batch processing** with workflows, which includes but is not limited to:   
 Read alignment   
 Variant calling   
 Joint filtering   
 
-2. **Interactive analysis**, which includes but is not limited to:   
+**2. Interactive analysis**, which includes but is not limited to:   
 R/Python-based downstream analysis   
 BigQuery   
 Hail   
 
 
 # Workspace
-Workspace is the main buildling block of Terra, where different resources are delivered 
+Workspace is **the main buildling block** of Terra, where different resources are delivered 
 through. Depending on your goal, you can use workspace for hosting data, building production
 pipelines, colleting analysis templates, or all of above! - You can use a Terra 
 workspace to keep all the components of your project - data, metadata, and analysis 
@@ -89,18 +89,23 @@ In this tab you can check on the status of workflow submissions, and dig down in
 
 
 # How to explore Terra resources
-![](images/library.png){width=500px, height=100px}
+Once you click the Hamburger button on the top left, you can open this drop-down
+menu. Under Library section, you can see the list of Terra's major resources: Data,
+Showcase, and Workflows.
 
-## [Datasets](https://app.terra.bio/#library/datasets)
+![](images/menu.png){width=140px, height=300px} 
+
+
+## [Data](https://app.terra.bio/#library/datasets)
 ![](images/datasets.png){width=500px, height=400px}
 
-## [Showcase & Tutorials](https://app.terra.bio/#library/showcase)
+## [Showcase](https://app.terra.bio/#library/showcase)
 ![](images/showcase&tutorial.png){width=550px, height=400px}
 
-## [Code & Workflow](https://app.terra.bio/#library/code)
+## [Workflows](https://app.terra.bio/#library/code)
 ![](images/code&workflows.png){width=550px, height=400px}
 
 
 
 # How to start your workspace
-![](images/menu.png){width=140px, height=300px} 
+

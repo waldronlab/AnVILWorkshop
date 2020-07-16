@@ -52,6 +52,8 @@ creating runtime is very intutive with the cost/hr information.
 3) Scroll down or type to find this group, and click   
 4) Click “Add User” and enter email address. Repeat for each email address   
 
+![](images/group_sharing.png){width=140px, height=300px} 
+
 **Benefits:**   
 - Workspaces can be shared with group in one step   
 - Read/write/own options   
@@ -92,6 +94,7 @@ These workflows incorporate many different runtime environments (e.g. GATK, MuTe
 Bioconductor,...) through one string input!
 
 ![](images/workflows.png)
+
 
 **3. Notebooks**   
 - Using Custom image: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor`    

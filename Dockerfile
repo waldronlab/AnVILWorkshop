@@ -1,4 +1,4 @@
-FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor:0.0.14
+FROM bioconductor/bioconductor_docker:devel
 
 WORKDIR /home/rstudio
 
