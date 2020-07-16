@@ -22,8 +22,10 @@ navbar:
         href: articles/usecase.html
     - text: Reference
       menu:
-      - text: AnVIL package
-        href: articles/AnVIL_package.html
+      - text: AnVIL vignettes
+        href: https://bioconductor.org/packages/release/bioc/vignettes/AnVIL/inst/doc/Introduction.html
+      - text: Terra User Guide
+        href: https://support.terra.bio/hc/en-us
   right:
    - icon: fa-github
      href: https://github.com/waldronlab/AnVILWorkshop

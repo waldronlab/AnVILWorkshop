@@ -52,7 +52,7 @@ creating runtime is very intutive with the cost/hr information.
 3) Scroll down or type to find this group, and click   
 4) Click “Add User” and enter email address. Repeat for each email address   
 
-![](images/group_sharing.png){width=140px, height=300px} 
+![](images/share_workspace.png){width=400px, height=400px}
 
 **Benefits:**   
 - Workspaces can be shared with group in one step   
@@ -93,7 +93,7 @@ time because they don't have any dependence on other workflows for their inputs.
 These workflows incorporate many different runtime environments (e.g. GATK, MuTect, 
 Bioconductor,...) through one string input!
 
-![](images/workflows.png)
+![](images/workflow_diagram.png)
 
 
 **3. Notebooks**   
@@ -102,3 +102,4 @@ Bioconductor,...) through one string input!
 - AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
 
 ![](images/notebooks.png)
+

@@ -100,10 +100,10 @@ Showcase, and Workflows.
 ![](images/datasets.png){width=500px, height=400px}
 
 ## [Showcase](https://app.terra.bio/#library/showcase)
-![](images/showcase&tutorial.png){width=550px, height=400px}
+![](images/showcase_tutorial.png){width=550px, height=400px}
 
 ## [Workflows](https://app.terra.bio/#library/code)
-![](images/code&workflows.png){width=550px, height=400px}
+![](images/code_workflows.png){width=550px, height=400px}
 
 
 
