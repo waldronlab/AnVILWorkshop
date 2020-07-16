@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 # Introduction
-## Cloud-based genomics platforms
+### Cloud-based genomics platforms
 The rapidly growing size of genomic datasets introduces challenges of data transfer, 
 storage, access, sharing, and computing. Cloud-based genomics platform is one of 
 the solutions and many of them already exist hosting different dataset and analysis
@@ -47,7 +47,7 @@ Terra provides:
 ### Setup Terra account
 * Instruction on [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra).
 
-## What kind of analysis can you do on Terra?
+### What kind of analysis can you do on Terra?
 Currently, [Terra supports two modes of analysis](https://support.terra.bio/hc/en-us/articles/360022714931-What-kind-of-analysis-can-you-do-on-Terra-). 
 
 1. **Batch processing** with workflows, which includes but is not limited to:   
@@ -88,19 +88,19 @@ In the workflows tab you will find workflows for bulk analyses.These are the sor
 In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.  
 
 
-## Prebuild workspace examples
-[Biocondoctor Workspace](https://app.terra.bio/#workspaces/help-gatk/Bioconductor)
-
-## Demo
-1. Create a new workspace   
-2. Use an existing workspace   
-3. Share a workspace with others   
-
-
-# How to access datasets
-![](images/menu.png){width=140px, height=300px} 
-
-# How to access workflows
+# How to explore Terra resources
 ![](images/library.png){width=500px, height=100px}
 
+## [Datasets](https://app.terra.bio/#library/datasets)
+![](images/datasets.png){width=500px, height=400px}
 
+## [Showcase & Tutorials](https://app.terra.bio/#library/showcase)
+![](images/showcase&tutorial.png){width=550px, height=400px}
+
+## [Code & Workflow](https://app.terra.bio/#library/code)
+![](images/code&workflows.png){width=550px, height=400px}
+
+
+
+# How to start your workspace
+![](images/menu.png){width=140px, height=300px} 
