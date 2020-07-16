@@ -66,7 +66,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/AnVIL_package.html">AnVIL package</a>
+      <a href="https://bioconductor.org/packages/release/bioc/vignettes/AnVIL/inst/doc/Introduction.html">AnVIL vignettes</a>
+    </li>
+    <li>
+      <a href="https://support.terra.bio/hc/en-us">Terra User Guide</a>
     </li>
   </ul>
 </li>
@@ -133,7 +136,7 @@ No way to identify an over-spending student or to limit what runtime they must u
 2) “Create a new group” at <a href="https://app.terra.bio/#groups" class="uri">https://app.terra.bio/#groups</a> (Note: group name must be (universally?) unique)<br>
 3) Scroll down or type to find this group, and click<br>
 4) Click “Add User” and enter email address. Repeat for each email address</p>
-<p><img src="images/group_sharing.png" height="300"></p>
+<p><img src="images/share_workspace.png" height="400"></p>
 <p><strong>Benefits:</strong><br>
 - Workspaces can be shared with group in one step<br>
 - Read/write/own options<br>
@@ -170,7 +173,7 @@ Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI
 <p><strong>2. Workflows</strong><br>
 Left side of the diagram summarizes the CNV/SNV analysis workflow this paper used. Pink boxes around each segment of the pipeline are built into 7 WDL workflows in Terra, based on their modulatiry, input/output requirements. The numbered prefix represents the order each workflows should run. For example, <code>1_MuTect1_PON</code>, <code>1_MuTect1_Variants_Calling</code>, and <code>1_PureCN_IntervalFile</code> can run all at the same time because they don’t have any dependence on other workflows for their inputs.</p>
 <p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…) through one string input!</p>
-<p><img src="images/workflows.png"></p>
+<p><img src="images/workflow_diagram.png"></p>
 <p><strong>3. Notebooks</strong><br>
 - Using Custom image: <code>us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor</code><br>
 - 5 notebooks → 4 for data pre-processing and 1 for downstream analysis<br>
