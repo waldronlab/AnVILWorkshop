@@ -104,6 +104,7 @@
 
     
     
+<p><br></p>
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
@@ -151,38 +152,30 @@
 <h3 class="hasAnchor">
 <a href="#terra" class="anchor"></a>Terra</h3>
 <p>In this workshop, we are focusing on Terra. Terra is the analysis platform of <a href="https://anvilproject.org/">AnVIL</a> (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.</p>
-<p>Terra provides:<br><strong>1. [Data]</strong> secure remote access to public geneomic data without paying storage (powered by <a href="https://gen3.org/">GEN3</a>)<br><strong>2. [Workflows]</strong> best practice tools and pipelines already implemented (powered by <a href="https://dockstore.org/">Dockstore</a>)<br><strong>3. [Notebooks]</strong> interactive analysis interfaces such as Jupyter notebook, RStudio, and Galaxy<br><strong>4. On-demand computational capacity</strong> through Google Cloud Platform</p>
+<div id="terra-provides" class="section level4">
+<h4 class="hasAnchor">
+<a href="#terra-provides" class="anchor"></a>Terra provides:</h4>
+<p><strong>1. Data</strong> : secure remote access to public geneomic data without paying storage (powered by <a href="https://gen3.org/">GEN3</a>)<br><strong>2. Workflows</strong> : best practice tools and pipelines already implemented (powered by <a href="https://dockstore.org/">Dockstore</a>)<br><strong>3. Notebooks</strong> : interactive analysis interfaces such as Jupyter notebook (default), RStudio (custom environemtn), and Galaxy (coming soon)<br><strong>4. On-demand computational capacity</strong> through Google Cloud Platform</p>
 <div class="figure">
 <img src="images/AnVIL_ecosystem.png" alt=""><p class="caption">(From MaGIC Jamboree)</p>
 </div>
 </div>
-<div id="setup-terra-account" class="section level3">
-<h3 class="hasAnchor">
-<a href="#setup-terra-account" class="anchor"></a>Setup Terra account</h3>
-<ul>
-<li>Instruction on <a href="https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra">Terra account setup</a>.</li>
-</ul>
 </div>
 <div id="what-kind-of-analysis-can-you-do-on-terra" class="section level3">
 <h3 class="hasAnchor">
 <a href="#what-kind-of-analysis-can-you-do-on-terra" class="anchor"></a>What kind of analysis can you do on Terra?</h3>
 <p>Currently, <a href="https://support.terra.bio/hc/en-us/articles/360022714931-What-kind-of-analysis-can-you-do-on-Terra-">Terra supports two modes of analysis</a>.</p>
-<p><strong>1. Batch processing</strong> with workflows, which includes but is not limited to:<br>
-Read alignment<br>
-Variant calling<br>
-Joint filtering</p>
-<p><strong>2. Interactive analysis</strong>, which includes but is not limited to:<br>
-R/Python-based downstream analysis<br>
-BigQuery<br>
-Hail</p>
+<p><strong>1. Batch processing</strong> with workflows, which includes but is not limited to: Read alignment, Variant calling, Joint filtering<br><strong>2. Interactive analysis</strong>, which includes but is not limited to: R/Python-based downstream analysis, BigQuery, Hail</p>
+<p><br></p>
 </div>
 </div>
 <div id="workspace" class="section level1">
 <h1 class="hasAnchor">
 <a href="#workspace" class="anchor"></a>Workspace</h1>
-<p>Workspace is <strong>the main buildling block</strong> of Terra, where different resources are delivered through. Depending on your goal, you can use workspace for hosting data, building production pipelines, colleting analysis templates, or all of above! - You can use a Terra workspace to keep all the components of your project - data, metadata, and analysis tools as well as documentation and provenance - together.</p>
-<p>You can find more detail about workspace in here: <a href="https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces">Intro to working with workspace</a></p>
+<p>Workspace is <strong>the main buildling block</strong> of Terra, where different resources are delivered through. Depending on your goal, you can use a workspace for hosting data, building production pipelines, collecting analysis templates, or all of above! - You can use a Terra workspace to keep all the components of your project - data, metadata, and analysis tools as well as documentation and provenance - together.</p>
+<p>You can find more detail about workspace in here: <a href="https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces">Intro to working with workspace</a> - <a href="https://youtu.be/ONc1Wf7rEuw">video</a> (By Broad’s Terra team)</p>
 <p><img src="images/workspace.png"></p>
+<p><br></p>
 <p><strong>1. Dashboard: Documentation and workspace information</strong><br>
 Here is where you describe the research project - what questions you are trying to answer, what kind of data and analyses you will use, etc. Documentation is important! Well-documented workspaces make it easy to share and collaborate. This tab also includes information about the workspace owner and creation date.</p>
 <p><strong>2. Data: Organize and access data-in-the-cloud</strong><br>
@@ -190,37 +183,60 @@ Terra uses tables, which are like built-in spreadsheets, to help access and orga
 <p><strong>3. Notebooks: Interactive analysis</strong><br>
 In the notebooks tab you can launch an in-app Jupyter Notebook and interact with the data using Python or R.</p>
 <p><strong>4. Workflows: Pipelining analysis</strong><br>
-In the workflows tab you will find workflows for bulk analyses.These are the sorts of repetitive analyses that can be automated, such as what you would use to align sequencer reads. Workflows in Terra are written in in Workflow Description Language and are called WDLs.</p>
+In the workflows tab you will find workflows for bulk analyses. These are the sorts of repetitive analyses that can be automated, such as what you would use to align sequencer reads. Workflows in Terra are written in in Workflow Description Language and are called WDLs.</p>
 <p><strong>5. Job History: Provenance and troubleshooting</strong><br>
 In this tab you can check on the status of workflow submissions, and dig down into error logs for help with troubleshooting errors or submission failures. Your workspace also maintains a list of all previous submissions, for reproducibility and provenance.</p>
+<p><br></p>
 </div>
 <div id="how-to-explore-terra-resources" class="section level1">
 <h1 class="hasAnchor">
 <a href="#how-to-explore-terra-resources" class="anchor"></a>How to explore Terra resources</h1>
-<p>Once you click the Hamburger button on the top left, you can open this drop-down menu. Under Library section, you can see the list of Terra’s major resources: Data, Showcase, and Workflows.</p>
-<p><img src="images/menu.png" height="300"></p>
+<p>Terra has three distinct libraries that can be used as resources to build the workspace you need for your analysis. To access the libraries, click the Hamburger button (three horizontal lines) at the top left of any page and open the “Library” submenu. Under the Library submenu, you can see the list of Terra’s major resources: Data, Showcase, and Workflows.</p>
+<p><img src="images/library.png"></p>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
-<a href="#data" class="anchor"></a><a href="https://app.terra.bio/#library/datasets">Data</a>
-</h2>
-<p><img src="images/datasets.png" height="400"></p>
+<a href="#data" class="anchor"></a>Data</h2>
+<p>Terra hosts both open- and controlled-access datasets. Select datasets have built-in functionality ("Data Explorers) for exploring - and creating customized subsets from - the data.</p>
+<p>Here are the available datasets in Terra through various awards:<br>
+- AnVIL : CCDG (Centers for Common Disease Genomics), CMG (Center for Mendelian genomics), GTEx (Genotype-Tissue Expression Project), eMERGE (Electronic medical records and genomics)<br>
+- STAGE : TOPMed (Trans-Omics for Precision Medicine)<br>
+- NHS (The Nurses’ Health Study)<br>
+- HCA (The Human Cell Atlas)<br>
+- ENCODE (The <em>Enc</em>yclopedia <em>O</em>f <em>D</em>NA <em>E</em>lements)<br>
+- TCGA (The Cancer Genome Atlas), TARGET (<em>T</em>umor <em>a</em>lterations <em>r</em>elevant for <em>ge</em>nomics-driven <em>t</em>herapy)</p>
+<p>Note that registering for Terra itself does not automatically grant access to all available data.</p>
+<p><img src="images/datasets.png"></p>
+<p><br> ## Showcase Showcase &amp; Tutorials (template workspaces) are intended to ensure users to reproduce instructive resssults and learn establisehd methodologies.</p>
+<div id="example-gatk-workspaces" class="section level4">
+<h4 class="hasAnchor">
+<a href="#example-gatk-workspaces" class="anchor"></a>Example (GATK) workspaces</h4>
+<ul>
+<li>Showcase reproducible examples of GATK workflows and tools for general use<br>
+</li>
+<li>Many contain tools developed at and supported by Broad</li>
+</ul>
 </div>
-<div id="showcase" class="section level2">
-<h2 class="hasAnchor">
-<a href="#showcase" class="anchor"></a><a href="https://app.terra.bio/#library/showcase">Showcase</a>
-</h2>
-<p><img src="images/showcase_tutorial.png" height="400"></p>
+<div id="featured-workspaces" class="section level4">
+<h4 class="hasAnchor">
+<a href="#featured-workspaces" class="anchor"></a>Featured workspaces</h4>
+<ul>
+<li>Tutorial workspaces<br>
+</li>
+<li>Specific use cases based on published work<br>
+</li>
+<li>Give users a chance to understand their peers’ experimental design</li>
+</ul>
+<p><img src="images/showcase_tutorial.png"></p>
+<p><br></p>
+</div>
 </div>
 <div id="workflows" class="section level2">
 <h2 class="hasAnchor">
-<a href="#workflows" class="anchor"></a><a href="https://app.terra.bio/#library/code">Workflows</a>
-</h2>
-<p><img src="images/code_workflows.png" height="400"></p>
+<a href="#workflows" class="anchor"></a>Workflows</h2>
+<p>The Code &amp; Workflows section contains various tools and tasks that make up components of workflows. Users familiar with running workflows can use this repository to find workflow components to run individually or to string together using Workflow Description Language (WDL).</p>
+<p>This section also includes links to other helpful open source workflow repositories. Look to the right of the Code &amp; Workflows tab under “FIND ADDITIONAL WORKFLOWS.”</p>
+<p><img src="images/code_workflows.png"></p>
 </div>
-</div>
-<div id="how-to-start-your-workspace" class="section level1">
-<h1 class="hasAnchor">
-<a href="#how-to-start-your-workspace" class="anchor"></a>How to start your workspace</h1>
 </div>
   </div>
 
