@@ -37,7 +37,10 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 ## Pre-requisites
 
 * Basic knowledge of R syntax
-* (optional) [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra). Recommended if you want to follow the instructor-led demo section on your own.
+* (optional) [Terra](https://app.terra.bio/#) account setup. Recommended if you 
+want to follow the instructor-led demo section on your own. ([Instruction](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra))
+* Add your Gmail in this [spread sheet](https://docs.google.com/spreadsheets/d/1hJ0bYYx6SJLLI6mCQs3c05Rmgv39pkBawuWP51IMQXY/edit?usp=sharing) 
+to join the group billing account
 
 ## Workshop Participation
 

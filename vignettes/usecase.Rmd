@@ -1,5 +1,5 @@
 ---
-title: "Use Case"
+title: "Use Cases"
 vignette: >
   %\VignetteIndexEntry{AnVIL/Terra Use Cases}
   %\VignetteEngine{knitr::rmarkdown}
@@ -19,6 +19,28 @@ knitr::opts_chunk$set(
 
 
 # Terra in the classroom 
+### Share Workspace
+Terra workspace allows setup of a lecture or lab in advance of sharing it, where 
+everyone uses the same runtime environment - no setup or compatibility issues. Also, 
+creating runtime is very intutive with the cost/hr information. 
+
+**How to share:**   
+1) Collect Google emails of all students (if institution is using GSuite, can be institutional emails)   
+2) “Create a new group” at https://app.terra.bio/#groups (Note: group name must be (universally?) unique)   
+3) Scroll down or type to find this group, and click   
+4) Click “Add User” and enter email address. Repeat for each email address   
+
+![](images/share_workspace.png){width=400px, height=400px}
+
+**Benefits:**   
+- Workspaces can be shared with group in one step   
+- Read/write/own options   
+- Can share compute resources on any particular workspace   
+- Can remove or change permissions or group members at any time   
+- Set permissions per workspace   
+
+
+
 ### Control Billing
 **How to setup:**   
 Need a [Google Cloud Platform billing account](https://console.cloud.google.com/)   
@@ -40,26 +62,6 @@ No way to identify an over-spending student or to limit what runtime they must u
 **Notes:**   
 - Billing is post-pay (you can find out how much has been spent with ~24h delay)
 
-
-### Share Workspace
-Terra workspace allows setup of a lecture or lab in advance of sharing it, where 
-everyone uses the same runtime environment - no setup or compatibility issues. Also, 
-creating runtime is very intutive with the cost/hr information. 
-
-**How to share:**   
-1) Collect Google emails of all students (if institution is using GSuite, can be institutional emails)   
-2) “Create a new group” at https://app.terra.bio/#groups (Note: group name must be (universally?) unique)   
-3) Scroll down or type to find this group, and click   
-4) Click “Add User” and enter email address. Repeat for each email address   
-
-![](images/share_workspace.png){width=400px, height=400px}
-
-**Benefits:**   
-- Workspaces can be shared with group in one step   
-- Read/write/own options   
-- Can share compute resources on any particular workspace   
-- Can remove or change permissions or group members at any time   
-- Set permissions per workspace   
 
 
 # Terra for paper
@@ -97,8 +99,7 @@ Bioconductor,...) through one string input!
 
 
 **3. Notebooks**   
-- Using Custom image: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor`    
-- 5 notebooks → 4 for data pre-processing and 1 for downstream analysis   
+- 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis   
 - AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
 
 ![](images/notebooks.png)
