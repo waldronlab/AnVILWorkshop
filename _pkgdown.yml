@@ -16,12 +16,12 @@ navbar:
   left:
     - text: Workshop
       menu:
-      - text: How to access datasets and workflows
+      - text: Overview
         href: articles/overview.html
-      - text: Interactive analysis setup and demonstration
+      - text: Use Cases
         href: articles/usecase.html
       - text: Live demo
-        href: articles/liev-demo.html
+        href: articles/live-demo.html
     - text: Reference
       menu:
       - text: AnVIL vignettes

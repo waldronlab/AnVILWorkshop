@@ -37,10 +37,12 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 ## Pre-requisites
 
 * Basic knowledge of R syntax
-* (optional) [Terra](https://app.terra.bio/#) account setup. Recommended if you 
-want to follow the instructor-led demo section on your own. ([Instruction](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra))
-* Add your Gmail in this [spread sheet](https://docs.google.com/spreadsheets/d/1hJ0bYYx6SJLLI6mCQs3c05Rmgv39pkBawuWP51IMQXY/edit?usp=sharing) 
-to join the group billing account
+* [Terra](https://app.terra.bio/#) account setup. --> Add your Gmail in this [spread sheet](https://docs.google.com/spreadsheets/d/1hJ0bYYx6SJLLI6mCQs3c05Rmgv39pkBawuWP51IMQXY/edit?usp=sharing) to join the group billing account    
+1. Visit https://app.terra.bio/#    
+2. Select the ‘HAMBURGER’ menu in the top left corner   
+3. Choose ‘Sign in with Google’   
+  
+![](vignettes/images/signin.png){width=150px, height=250px}
 
 ## Workshop Participation
 
@@ -54,9 +56,10 @@ Participants will have the opportunity to access a pre-populated Terra workspace
 
 | Activity                                              | Time |
 |-------------------------------------------------------|------|
-| Overview                                              | 5m   |
-| How to access datasets and workflows                  | 20m  |
-| Interactive analysis setup and demonstration          | 35m  |
+| Account Setup                                         | 5m   |
+| Overview                                              | 15m  |
+| Use Cases                                             | 10m  |
+| Live Demo                                             | 25m  |
 
 
 ## Learning Goals

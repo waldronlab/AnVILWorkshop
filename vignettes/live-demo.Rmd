@@ -18,15 +18,6 @@ knitr::opts_chunk$set(
 ```
 
 
-# Create an AnVIL/Terra account
-1. Visit https://app.terra.bio/#   
-2. Select the ‘HAMBURGER’ menu in the top left corner   
-3. Choose ‘Sign in with Google’   
-  
-![](images/signin.png){width=150px, height=250px}
-
-
-
 # Start your workspace from the existing workspaces
 ## From this workshop
 ![](images/usecases.png)
@@ -58,10 +49,3 @@ Other Environments -> Project-Specific Environment -> `us.gcr.io/anvil-gcr-publi
 If you want to change the runtime environment of your project:
 ![](images/custom_runtime.png)
 
-
-
-
-
-# Create your own workspace   
-- From dataset   
-- From tools   
