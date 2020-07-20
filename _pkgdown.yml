@@ -20,6 +20,8 @@ navbar:
         href: articles/overview.html
       - text: Interactive analysis setup and demonstration
         href: articles/usecase.html
+      - text: Live demo
+        href: articles/liev-demo.html
     - text: Reference
       menu:
       - text: AnVIL vignettes
