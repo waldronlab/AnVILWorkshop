@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Cases • AnVILWorkshop</title>
+<title>Live Demo • AnVILWorkshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Use Cases">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Live Demo">
 <meta property="og:description" content="AnVILWorkshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -91,94 +91,70 @@
 
       
 
-      </header><script src="usecase_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="live-demo_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Use Cases</h1>
+      <h1 data-toc-skip>Live Demo</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/waldronlab/AnVILWorkshop/blob/master/vignettes/usecase.Rmd"><code>vignettes/usecase.Rmd</code></a></small>
-      <div class="hidden name"><code>usecase.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/waldronlab/AnVILWorkshop/blob/master/vignettes/live-demo.Rmd"><code>vignettes/live-demo.Rmd</code></a></small>
+      <div class="hidden name"><code>live-demo.Rmd</code></div>
 
     </div>
 
     
     
-<div id="terra-in-the-classroom" class="section level1">
+<div id="create-an-anvilterra-account" class="section level1">
 <h1 class="hasAnchor">
-<a href="#terra-in-the-classroom" class="anchor"></a>Terra in the classroom</h1>
-<div id="share-workspace" class="section level3">
-<h3 class="hasAnchor">
-<a href="#share-workspace" class="anchor"></a>Share Workspace</h3>
-<p>Terra workspace allows setup of a lecture or lab in advance of sharing it, where everyone uses the same runtime environment - no setup or compatibility issues. Also, creating runtime is very intutive with the cost/hr information.</p>
-<p><strong>How to share:</strong><br>
-1) Collect Google emails of all students (if institution is using GSuite, can be institutional emails)<br>
-2) “Create a new group” at <a href="https://app.terra.bio/#groups" class="uri">https://app.terra.bio/#groups</a> (Note: group name must be (universally?) unique)<br>
-3) Scroll down or type to find this group, and click<br>
-4) Click “Add User” and enter email address. Repeat for each email address</p>
-<p><img src="images/share_workspace.png"></p>
-<p><strong>Benefits:</strong><br>
-- Workspaces can be shared with group in one step<br>
-- Read/write/own options<br>
-- Can share compute resources on any particular workspace<br>
-- Can remove or change permissions or group members at any time<br>
-- Set permissions per workspace</p>
+<a href="#create-an-anvilterra-account" class="anchor"></a>Create an AnVIL/Terra account</h1>
+<ol style="list-style-type: decimal">
+<li>Visit <a href="https://app.terra.bio/#" class="uri">https://app.terra.bio/#</a><br>
+</li>
+<li>Select the ‘HAMBURGER’ menu in the top left corner<br>
+</li>
+<li>Choose ‘Sign in with Google’</li>
+</ol>
+<p><img src="images/signin.png" height="250"></p>
 </div>
-<div id="control-billing" class="section level3">
-<h3 class="hasAnchor">
-<a href="#control-billing" class="anchor"></a>Control Billing</h3>
-<p><strong>How to setup:</strong><br>
-Need a <a href="https://console.cloud.google.com/">Google Cloud Platform billing account</a><br>
-- Can use educational credits billing account<br>
-- Can use <a href="https://www.onixnet.com/onspend-cloud-billing">Onix billing account</a><br>
-- Can use regular billing account backed by credit card</p>
-<p><strong>Positives:</strong><br>
-- Each student selects a compute environment with known cost per hour:<br>
-each student can select what they need<br>
-- Terra auto-suspend of notebook runtimes helped keep costs low<br>
-- Students only have to login, don’t have to set up billing</p>
-<p><strong>Negatives:</strong><br>
-- Each student selects a compute environment with known cost per hour:<br>
-No way to identify an over-spending student or to limit what runtime they must use<br>
-- No cost breakdown per student</p>
-<p><strong>Notes:</strong><br>
-- Billing is post-pay (you can find out how much has been spent with ~24h delay)</p>
-</div>
-</div>
-<div id="terra-for-paper" class="section level1">
+<div id="start-your-workspace-from-the-existing-workspaces" class="section level1">
 <h1 class="hasAnchor">
-<a href="#terra-for-paper" class="anchor"></a>Terra for paper</h1>
-<div id="introduction" class="section level3">
-<h3 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h3>
-<p><a href="https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV">This workspace</a> provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [<a href="https://ascopubs.org/doi/10.1200/CCI.19.00130">link</a>].</p>
-<p><strong>Reliable analysis of clinical tumor-only whole exome sequencing data</strong><br>
-Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.</p>
+<a href="#start-your-workspace-from-the-existing-workspaces" class="anchor"></a>Start your workspace from the existing workspaces</h1>
+<div id="from-this-workshop" class="section level2">
+<h2 class="hasAnchor">
+<a href="#from-this-workshop" class="anchor"></a>From this workshop</h2>
+<p><img src="images/usecases.png"></p>
 </div>
-<div id="benefits" class="section level3">
-<h3 class="hasAnchor">
-<a href="#benefits" class="anchor"></a>Benefits</h3>
-<p>The major benefits of having Terra workspace with research paper are:<br>
-1) Data storage, pipeline (compute-intense), and downstream analysis are all available in one place<br>
-2) Improved reproducibility<br>
-3) Sharing code and providing additional information not included in the paper are available through the workspace</p>
+<div id="share-workspaces" class="section level2">
+<h2 class="hasAnchor">
+<a href="#share-workspaces" class="anchor"></a>Share workspaces</h2>
+<ul>
+<li><p><strong>Cloning</strong> a workspace makes you the owner, and allows you to experiment with code and data in your own copy of a workspace without running the risk of affecting a group workspace. Cloning also allows you to use a different Billing Project to cover workspace analysis costs. Cloning is useful if you want to run computations in a shared workspace where you only have “read access.” Cloning creates a completely independent copy of the workspace in which you are the owner and sole user. (<a href="https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace">reference</a>)</p></li>
+<li><p><strong>Sharing</strong> a workspace allows collaborators to actively work together in the same project workspace. (<a href="https://support.terra.bio/hc/en-us/articles/360034540171-How-to-share-a-workspace">reference</a>)</p></li>
+</ul>
+<p><br></p>
+<p><img src="images/clone_share.png"></p>
 </div>
-<div id="features" class="section level3">
-<h3 class="hasAnchor">
-<a href="#features" class="anchor"></a>Features</h3>
-<p><strong>1. Data</strong><br>
-- Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace<br>
-- Public reference files (stored in GCP, some are directly available through Terra)<br>
-- Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’</p>
-<p><strong>2. Workflows</strong><br>
-Left side of the diagram summarizes the CNV/SNV analysis workflow this paper used. Pink boxes around each segment of the pipeline are built into 7 WDL workflows in Terra, based on their modulatiry, input/output requirements. The numbered prefix represents the order each workflows should run. For example, <code>1_MuTect1_PON</code>, <code>1_MuTect1_Variants_Calling</code>, and <code>1_PureCN_IntervalFile</code> can run all at the same time because they don’t have any dependence on other workflows for their inputs.</p>
-<p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…) through one string input!</p>
-<p><img src="images/workflow_diagram.png"></p>
-<p><strong>3. Notebooks</strong><br>
-- 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis<br>
-- AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’</p>
-<p><img src="images/notebooks.png"></p>
 </div>
+<div id="different-runtime-configurations" class="section level1">
+<h1 class="hasAnchor">
+<a href="#different-runtime-configurations" class="anchor"></a>Different runtime configurations</h1>
+<p>You can decided the runtime environement of your workspace at the project level. Below are two example workspaces with different runtime enviornment</p>
+<p><img src="images/bioc2020_workspaces.png"></p>
+<p><strong>1. BioC2020-Workshop-RStudio</strong><br>
+Jupyter Environment <code>R/Bioconductor: (Python 3.7.8, R4.0.2, BiocVersion 3.11.1, tidyverse 1.3.0)</code></p>
+<p><strong>2. BioC2020-Workshop-Jupyter</strong><br>
+Other Environments -&gt; Project-Specific Environment -&gt; <code>us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:0.0.4</code></p>
+<p><br></p>
+<p>If you want to change the runtime environment of your project: <img src="images/custom_runtime.png"></p>
+</div>
+<div id="create-your-own-workspace" class="section level1">
+<h1 class="hasAnchor">
+<a href="#create-your-own-workspace" class="anchor"></a>Create your own workspace</h1>
+<ul>
+<li>From dataset<br>
+</li>
+<li>From tools</li>
+</ul>
 </div>
   </div>
 
