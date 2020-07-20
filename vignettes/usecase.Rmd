@@ -30,7 +30,7 @@ creating runtime is very intutive with the cost/hr information.
 3) Scroll down or type to find this group, and click   
 4) Click “Add User” and enter email address. Repeat for each email address   
 
-![](images/share_workspace.png){width=400px, height=400px}
+![](images/share_workspace.png)
 
 **Benefits:**   
 - Workspaces can be shared with group in one step   
