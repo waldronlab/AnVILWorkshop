@@ -18,9 +18,24 @@ knitr::opts_chunk$set(
 ```
 
 
-# Start your workspace from the existing workspaces
-## From this workshop
-![](images/usecases.png)
+
+# Demo Workspace
+We will use one of the notebook, `1_Annotate_Manifest`, from Tumor_Only_CNV workspace 
+for our live demo. You will clone this workspace and start your own notebook in 
+playground mode.
+
+1. Go to https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV   
+2. Clone this workspace. Use the Billing project, "bioc2020-workshop-jupyter"   
+
+![](images/clone_demo_workspace.png){width=500px, height=400px}  
+
+3. From your cloned workspace, go NOTEBOOKS tab   
+4. Open the notebook, 1_Annotate_Manifest    
+5. Start your notebook in playground mode 
+
+![](images/start_notebooks.png){width=500px, height=400px}
+
+
 
 ## Share workspaces
 - **Cloning** a workspace makes you the owner, and allows you to experiment with code and data in your own copy of a workspace without running the risk of affecting a group workspace. Cloning also allows you to use a different Billing Project to cover workspace analysis costs. Cloning is useful if you want to run computations in a shared workspace where you only have "read access." Cloning creates a completely independent copy of the workspace in which you are the owner and sole user. ([reference](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace))

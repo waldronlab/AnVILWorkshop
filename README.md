@@ -37,7 +37,7 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 ## Pre-requisites
 
 * Basic knowledge of R syntax
-* [Terra](https://app.terra.bio/#) account setup. --> Add your Gmail in this [spread sheet](https://docs.google.com/spreadsheets/d/1hJ0bYYx6SJLLI6mCQs3c05Rmgv39pkBawuWP51IMQXY/edit?usp=sharing) to join the group billing account    
+* [Terra](https://app.terra.bio/#) account setup.     
 1. Visit https://app.terra.bio/#    
 2. Select the ‘HAMBURGER’ menu in the top left corner   
 3. Choose ‘Sign in with Google’   
