@@ -20,18 +20,20 @@ knitr::opts_chunk$set(
 
 
 # Demo Workspace
-We will use the notebook, `Annotate_Manifest`, from **BioC2020_Workshop_Jupyter** workspace 
+We will use the notebook, *Annotate_Manifest*, from **BioC2020_Workshop_Jupyter** workspace 
 for our live demo. You will clone this workspace and start your own notebook in 
-playground mode.
+*PLAYGROUND MODE*.
 
 1. Go to https://app.terra.bio/#workspaces/bioc2020-workshop-jupyter/BioC2020_Workshop_Jupyter   
-2. Clone this workspace. Use the Billing project, "bioc2020-workshop-jupyter"   
+2. Clone this workspace:    
+- Assign a *unique* workspace name   
+- Use the Billing project, **"bioc2020-workshop-jupyter"**   
 
 ![](images/clone_demo_workspace2.png){width=500px, height=400px}  
 
 3. From your cloned workspace, go NOTEBOOKS tab   
-4. Open the notebook, Annotate_Manifest    
-5. Start your notebook in playground mode 
+4. Open the notebook, *Annotate_Manifest*    
+5. Start your notebook in *PLAYGROUND MODE* 
 
 ![](images/start_notebooks2.png){width=500px, height=400px}
 
