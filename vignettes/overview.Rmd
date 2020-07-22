@@ -1,5 +1,5 @@
 ---
-title: "How to access datasets and workflows"
+title: "Overview of Terra"
 vignette: >
   %\VignetteIndexEntry{AnVIL/Terra Workshop Overview}
   %\VignetteEngine{knitr::rmarkdown}
@@ -121,16 +121,16 @@ to all available data.
 
 ## Showcase
 Showcase & Tutorials (template workspaces) are intended to ensure users to reproduce
-instructive resssults and learn establisehd methodologies.
-
-**Example (GATK) workspaces**   
-- Showcase reproducible examples of GATK workflows and tools for general use   
-- Many contain tools developed at and supported by Broad   
+instructive results and learn establisehd methodologies.
 
 **Featured workspaces**   
 - Tutorial workspaces    
 - Specific use cases based on published work   
-- Give users a chance to understand their peers' experimental design   
+- Give users a chance to understand their peers' experimental design     
+
+**Example (GATK) workspaces**   
+- Showcase reproducible examples of GATK workflows and tools for general use   
+- Many contain tools developed at and supported by Broad   
 
 ![](images/showcase_tutorial.png)
 

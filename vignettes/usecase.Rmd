@@ -93,14 +93,14 @@ represents the order each workflows should run. For example, `1_MuTect1_PON`,
 time because they don't have any dependence on other workflows for their inputs.
 
 These workflows incorporate many different runtime environments (e.g. GATK, MuTect, 
-Bioconductor,...) through one string input!
+Bioconductor,...).   
 
 ![](images/workflow_diagram.png)
 
 
 **3. Notebooks**   
 - 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis   
-- AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’   
+- AnVIL package enables a direct connection between ‘Data’ and ‘Notebooks’   
 
 ![](images/notebooks.png)
 
