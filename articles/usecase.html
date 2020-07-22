@@ -175,11 +175,11 @@ Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI
 - Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’</p>
 <p><strong>2. Workflows</strong><br>
 Left side of the diagram summarizes the CNV/SNV analysis workflow this paper used. Pink boxes around each segment of the pipeline are built into 7 WDL workflows in Terra, based on their modulatiry, input/output requirements. The numbered prefix represents the order each workflows should run. For example, <code>1_MuTect1_PON</code>, <code>1_MuTect1_Variants_Calling</code>, and <code>1_PureCN_IntervalFile</code> can run all at the same time because they don’t have any dependence on other workflows for their inputs.</p>
-<p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…) through one string input!</p>
+<p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…).</p>
 <p><img src="images/workflow_diagram.png"></p>
 <p><strong>3. Notebooks</strong><br>
 - 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis<br>
-- AnVIL package enables a smoother connection between ‘Data’ and ‘Notebooks’</p>
+- AnVIL package enables a direct connection between ‘Data’ and ‘Notebooks’</p>
 <p><img src="images/notebooks.png"></p>
 </div>
 </div>
