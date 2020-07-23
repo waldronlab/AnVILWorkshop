@@ -107,6 +107,41 @@
 
     
     
+<div id="terra-for-paper" class="section level1">
+<h1 class="hasAnchor">
+<a href="#terra-for-paper" class="anchor"></a>Terra for paper</h1>
+<div id="introduction" class="section level3">
+<h3 class="hasAnchor">
+<a href="#introduction" class="anchor"></a>Introduction</h3>
+<p><a href="https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV">This workspace</a> provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [<a href="https://ascopubs.org/doi/10.1200/CCI.19.00130">link</a>].</p>
+<p><strong>Reliable analysis of clinical tumor-only whole exome sequencing data</strong><br>
+Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.</p>
+</div>
+<div id="benefits" class="section level3">
+<h3 class="hasAnchor">
+<a href="#benefits" class="anchor"></a>Benefits</h3>
+<p>The major benefits of having Terra workspace with research paper are:<br>
+1) Data storage, pipeline (compute-intense), and downstream analysis are all available in one place<br>
+2) Improved reproducibility<br>
+3) Sharing code and providing additional information not included in the paper are available through the workspace</p>
+</div>
+<div id="features" class="section level3">
+<h3 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h3>
+<p><strong>1. Data</strong><br>
+- Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace<br>
+- Public reference files (stored in GCP, some are directly available through Terra)<br>
+- Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’</p>
+<p><strong>2. Workflows</strong><br>
+Left side of the diagram summarizes the CNV/SNV analysis workflow this paper used. Pink boxes around each segment of the pipeline are built into 7 WDL workflows in Terra, based on their modulatiry, input/output requirements. The numbered prefix represents the order each workflows should run. For example, <code>1_MuTect1_PON</code>, <code>1_MuTect1_Variants_Calling</code>, and <code>1_PureCN_IntervalFile</code> can run all at the same time because they don’t have any dependence on other workflows for their inputs.</p>
+<p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…).</p>
+<p><img src="images/workflow_diagram.png"></p>
+<p><strong>3. Notebooks</strong><br>
+- 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis<br>
+- AnVIL package enables a direct connection between ‘Data’ and ‘Notebooks’</p>
+<p><img src="images/notebooks.png"></p>
+</div>
+</div>
 <div id="terra-in-the-classroom" class="section level1">
 <h1 class="hasAnchor">
 <a href="#terra-in-the-classroom" class="anchor"></a>Terra in the classroom</h1>
@@ -146,41 +181,6 @@ No way to identify an over-spending student or to limit what runtime they must u
 - No cost breakdown per student</p>
 <p><strong>Notes:</strong><br>
 - Billing is post-pay (you can find out how much has been spent with ~24h delay)</p>
-</div>
-</div>
-<div id="terra-for-paper" class="section level1">
-<h1 class="hasAnchor">
-<a href="#terra-for-paper" class="anchor"></a>Terra for paper</h1>
-<div id="introduction" class="section level3">
-<h3 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h3>
-<p><a href="https://app.terra.bio/#workspaces/waldronlab-terra/Tumor_Only_CNV">This workspace</a> provides a fully reproducible example of copy number variation (CNV) and single nucleotide variants (SNV) analysis of tumor samples without matching normal profile, described in the recent publication [<a href="https://ascopubs.org/doi/10.1200/CCI.19.00130">link</a>].</p>
-<p><strong>Reliable analysis of clinical tumor-only whole exome sequencing data</strong><br>
-Oh <em>et al.</em>, JCO Clin Cancer Inform. 2020 Apr;4:321-335. doi: 10.1200/CCI.19.00130.</p>
-</div>
-<div id="benefits" class="section level3">
-<h3 class="hasAnchor">
-<a href="#benefits" class="anchor"></a>Benefits</h3>
-<p>The major benefits of having Terra workspace with research paper are:<br>
-1) Data storage, pipeline (compute-intense), and downstream analysis are all available in one place<br>
-2) Improved reproducibility<br>
-3) Sharing code and providing additional information not included in the paper are available through the workspace</p>
-</div>
-<div id="features" class="section level3">
-<h3 class="hasAnchor">
-<a href="#features" class="anchor"></a>Features</h3>
-<p><strong>1. Data</strong><br>
-- Paper used TCGA controlled data (BAM files) → Synthetic dataset for public workspace<br>
-- Public reference files (stored in GCP, some are directly available through Terra)<br>
-- Researcher’s own data (BED, COSMIC VCFs stored in GCP) → some available with ‘Requester pays’</p>
-<p><strong>2. Workflows</strong><br>
-Left side of the diagram summarizes the CNV/SNV analysis workflow this paper used. Pink boxes around each segment of the pipeline are built into 7 WDL workflows in Terra, based on their modulatiry, input/output requirements. The numbered prefix represents the order each workflows should run. For example, <code>1_MuTect1_PON</code>, <code>1_MuTect1_Variants_Calling</code>, and <code>1_PureCN_IntervalFile</code> can run all at the same time because they don’t have any dependence on other workflows for their inputs.</p>
-<p>These workflows incorporate many different runtime environments (e.g. GATK, MuTect, Bioconductor,…).</p>
-<p><img src="images/workflow_diagram.png"></p>
-<p><strong>3. Notebooks</strong><br>
-- 5 Jupyter notebooks using R → 4 for data pre-processing and 1 for downstream analysis<br>
-- AnVIL package enables a direct connection between ‘Data’ and ‘Notebooks’</p>
-<p><img src="images/notebooks.png"></p>
 </div>
 </div>
   </div>
