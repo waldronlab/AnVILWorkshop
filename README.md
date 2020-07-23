@@ -42,7 +42,7 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 2. Select the ‘HAMBURGER’ menu in the top left corner   
 3. Choose ‘Sign in with Google’   
   
-![](vignettes/images/signin.png){width=150px, height=250px}
+<img src="vignettes/images/signin.png" alt="Sign-in" style="width:150px;height:250px;">
 
 ## Workshop Participation
 
