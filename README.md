@@ -31,18 +31,20 @@ data or analysis methods to workspaces. Workshop participants will learn how to
 use Terra through the use-case examples, instructor-led live demonstration, and the 
 Bioconductor AnVIL package. 
 
-This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL)
+This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)](https://anvilproject.org/)
 
 
 ## Pre-requisites
 
 * Basic knowledge of R syntax
-* [Terra](https://app.terra.bio/#) account setup.     
+* [Optional] Terra account setup     
 1. Visit https://app.terra.bio/#    
 2. Select the ‘HAMBURGER’ menu in the top left corner   
 3. Choose ‘Sign in with Google’   
-  
+
 <img src="vignettes/images/signin.png" alt="Sign-in" style="width:150px;height:250px;">
+
+* [Optional] Start notebook runtime for live-demo --> Follow the first section, *Demo Workspace*, of [Live Demo](http://waldronlab.io/AnVILWorkshop/articles/live-demo.html)
 
 ## Workshop Participation
 
@@ -77,3 +79,15 @@ Participants will have the opportunity to access a pre-populated Terra workspace
 * Use Jupyter notebook and RStudio in Terra
 * Use AnVIL package to access Terra and R/Bioconductor resource
   
+## Acknowledgement
+#### Funding
+NHGRI supports AnVIL through [cooperative agreement awards](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL#awards) to the [Broad Institute](https://projectreporter.nih.gov/project_info_description.cfm?aid=9788512&icde=46222930&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC&pball=) (#5U24HG010262) and [Johns Hopkins University](https://projectreporter.nih.gov/project_info_description.cfm?aid=9789931&icde=46222940&ddparam=&ddvalue=&ddsub=&cr=2&csb=default&cs=ASC&pball=) (#5U24HG010263).
+
+#### Links
+AnVIL project website: https://anvilproject.org/   
+AnVIL Terra: https://anvil.terra.bio/   
+Dockstore: https://dockstore.org/   
+GEN3: https://gen3.org/     
+
+
+
