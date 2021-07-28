@@ -65,7 +65,7 @@ Bioconductor,...).
 ### Share Workspace
 Terra workspace allows setup of a lecture or lab in advance of sharing it, where 
 everyone uses the same runtime environment - no setup or compatibility issues. Also, 
-creating runtime is very intutive with the cost/hr information. 
+creating runtime is very intuitive with the cost/hr information. 
 
 **How to share:**   
 1) Collect Google emails of all students (if institution is using GSuite, can be institutional emails)   
