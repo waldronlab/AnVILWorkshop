@@ -1,12 +1,16 @@
 ---
 title: "Live Demo"
+author: "Sehyun Oh"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 vignette: >
   %\VignetteIndexEntry{Live Demo}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 output:
-  html_document:
-    mathjax: null
+  BiocStyle::html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
 ---
 
 
@@ -19,50 +23,159 @@ knitr::opts_chunk$set(
 
 
 
-# Demo Workspace
-We will use the notebook, *Annotate_Manifest*, from **BioC2020_Workshop_Jupyter** workspace 
-for our live demo. You will clone this workspace and start your own notebook in 
-*PLAYGROUND MODE*.
+# RNAseq analysis   
+## Clone workspace
+This workspace performs bulk RNASeq differential expression from FASTQ files. 
+Salmon quantification step is implemented in WORKFLOWS and the downstream 
+analysis by DESeq2 is available under NOTEBOOKS.
 
-1. Go to https://app.terra.bio/#workspaces/bioc2020-workshop-jupyter/BioC2020_Workshop_Jupyter   
+1. Login to Terra and navigate to **"Bioconductor-Workflow-DESeq2"** workspace  
 2. Clone this workspace:    
 - Assign a *unique* workspace name   
-- Use the Billing project, **"bioc2020-workshop-jupyter"**   
+- Use the billing project, **"bioc2021-workshop"**   
 
-![](images/clone_demo_workspace2.png){width=500px, height=400px}  
+![](images/clone_demo_workspace2.png)
 
-3. From your cloned workspace, go NOTEBOOKS tab   
-4. Open the notebook, *Annotate_Manifest*    
-5. Start your notebook in *PLAYGROUND MODE* 
+## Run workflow
 
-![](images/start_notebooks2.png){width=500px, height=400px}
+* Inputs   
+  - Transcriptome fasta file   
+  - Per-sample paired-end fastq files  
+  
+* Outputs   
+  - Per-sample counts of reads aligned to known transcripts   
+  - 'Ultra fast' aligner: should take about 20 minutes for the largest fastq file 
+
+* Launch
+  - SELECT DATA from participant_set
+  - Connect workflow INPUTS to columns in the participant table (FASTQ files), 
+  workspace bucket (transcriptome FASTA file), or direct entry (transcriptome name)
+  - Use default OUTPUTS
+  - SAVE
+  - RUN ANALYSIS
+
+![](images/RNAseq_inputs.png)
+![](images/RNAseq_outputs.png)
+
+## Downstream analysis   
+
+* Start a Jupyter Notebook interactive environment
+
+![](images/default_runtime.png)
+
+* Package update
+  - When the runtime is ready, launch an interactive shell to update packages
+  - An interactive shell is 'better' for updating packages because we can see 
+  progress/errors; these are hidden by the Jupyter notebook
+  - Start R, update installed packages, and install current version of the 
+  AnVIL package
+
+```{bash eval=FALSE}
+root@...> R
+
+options(Ncpus = 2)    # faster installation, even if runtime 'oversubscribed'
+BiocManager::install(ask = FALSE)           # update installed packages
+pkgs <- c("Bioconductor/AnVIL", "GenomicFeatures", "tximport", "DESeq2")
+BiocManager::install(pkgs)    # latest AnVIL package
+```
+
+# GenomicSuperSignature
+## AnVILPublish
+### Package installation
+If necessary, install the AnVILPublish library.
+
+```{r}
+if (!"AnVILPublish" %in% rownames(installed.packages()))
+    BiocManager::install("AnVILPublish")
+```
+
+There are only a small number of functions in the package; it is
+likely best practice to invoke these using `AnVILPublish::...()`
+rather than attaching the package to the search path.
+
+### The `gcloud` SDK
+It is necessary to have the [gcloud SDK][https://cloud.google.com/sdk] 
+available to copy notebook files to the workspace. Test availability with
+```{r eval=FALSE}
+AnVIL::gcloud_exists()
+```
+
+and verify that the account and project are appropriate (consistent
+with AnVIL credentials) for use with AnVIL.
+```{r eval=FALSE}
+AnVIL::gcloud_account()
+AnVIL::gcloud_project()
+```
+
+Note that these be used to set, as well as interrogate, the account and project.
+
+### `notedown` software
+Conversion of .Rmd vignettes to .ipynb notebooks uses [notedown][https://github.com/aaren/notedown]
+python software. It must be available from within _R_, e.g.,
+
+```{r eval=FALSE}
+system2("notedown", "--version")
+```
+ 
+
+## Workspace from package source
+```{r eval=FALSE}
+AnVILPublish::as_workspace(
+    "path/to/package",
+    "billing-project-name",     # i.e., billing account
+    create = TRUE               # use update = TRUE for an existing workspace
+)
+```
+
+Below is the script I ran to create this workspace ([link](https://anvil.terra.bio/#workspaces/bioc2021-workshop/Bioconductor-Package-GenomicSuperSignature)).
+
+```{r eval=FALSE}
+AnVILPublish::as_workspace(
+    path = "~/data2/GenomicSuperSignature/",   # package source
+    namespace = "bioc2021-workshop",   # billing account
+    create = TRUE,
+    use_readme = TRUE
+)
+```
+
+## Analysis in RStudio
+You can choose the cloud environment of your workspace at the project level.
+Currently, to use RStudio in Terra, you should use one of the custom 
+environments. Below screen captures show how to do it.
+
+![](images/rstudio_cloud_env.png) 
+Once your RStudio is running, clone the git repository.
+```{bash eval=FALSE}
+git clone https://github.com/shbrief/GenomicSuperSignaturePaper.git
+```
 
 
 
-## Share workspaces
-- **Cloning** a workspace makes you the owner, and allows you to experiment with code and data in your own copy of a workspace without running the risk of affecting a group workspace. Cloning also allows you to use a different Billing Project to cover workspace analysis costs. Cloning is useful if you want to run computations in a shared workspace where you only have "read access." Cloning creates a completely independent copy of the workspace in which you are the owner and sole user. ([reference](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace))
 
-- **Sharing** a workspace allows collaborators to actively work together in the same project workspace. ([reference](https://support.terra.bio/hc/en-us/articles/360034540171-How-to-share-a-workspace))
+# Microbiome analysis
+## Runnable workflow package
+For R users with the limited computing resources, we introduce RunTerraWorkflow 
+package. This package allows users to run workflows implemented in 
+[Terra](https://app.terra.bio/#) without writing any workflow, installing 
+softwares, or managing cloud resources. Terra's computing resources rely on 
+Google Cloud Platform (GCP) and to use RunTerraWorkflow, you only need to 
+setup the Terra account once at the beginning.
 
-<br>
+Using [AnVIL](https://github.com/Bioconductor/AnVIL) package, RunTerraWorkflow 
+allows users to access both Terra and GCP through R session from a conventional 
+laptop, greatly lowers the learning curve for high-performance, cloud-based 
+genomics resources.
 
-![](images/clone_share.png)  
+<img src="https://raw.githubusercontent.com/shbrief/RunTerraWorkflow/master/inst/extdata/runnable_workflow.png?token=ADX67SQPCAGDGWQZCGQMIBTAJGHKC" width="90%" height="90%"/>
 
 
-# Different runtime configurations 
-You can decided the runtime environement of your workspace at the project level.
-Below are two example workspaces with different runtime enviornment
+## bioBakery
+[bioBakery workflows](https://github.com/biobakery/biobakery_workflows) is a 
+collection of workflows and tasks for executing common microbial community 
+analyses using standardized, validated tools and parameters. bioBakery is 
+built and maintained by [Huttenhower lab](http://huttenhower.sph.harvard.edu/).
 
-![](images/bioc2020_workspaces.png)
-
-**1. BioC2020-Workshop-RStudio**   
-Jupyter Environment `R/Bioconductor: (Python 3.7.8, R4.0.2, BiocVersion 3.11.1, tidyverse 1.3.0)`  
-
-**2. BioC2020-Workshop-Jupyter**    
-Other Environments -> Project-Specific Environment -> `us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:0.0.4` 
-
-<br>
-
-If you want to change the runtime environment of your project:
-![](images/custom_runtime.png)
+You can find the usecase example of running Terra-implemented bioBakery workflow
+([Whole Metagenome Shotgun (wmgx) workflow version 3](https://anvil.terra.bio/#workspaces/waldronlab-terra-rstudio/mtx_workflow_biobakery_version3_template)) 
+using RunTerraWorkflow package [**HERE**](https://rpubs.com/shbrief/RunTerrraWorkflow_bioBakery). 
 

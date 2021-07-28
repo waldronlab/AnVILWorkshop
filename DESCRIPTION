@@ -1,14 +1,16 @@
-Package: AnVILWorkshop
+Package: Terra/AnVIL Workshop
 Title: Cloud-based Genomics using Terra/AnVIL
-Version: 0.1.1
+Version: 0.2.0
+Date: 2021-07-27
 Authors@R: 
     person(given = "Sehyun",
            family = "Oh",
            role = c("aut", "cre"),
            email = "shbriefi@gmail.com",
            comment = c(ORCID = "0000-0002-9490-3061"))
-Description: We introduce cloud-based genomics platofrm, Terra, and Bioconductor
-    package AnVIL for R-friendly usage of Terra.
+Description: We introduce Terra, a cloud-based genomics platofrm, and AnVIL, a 
+    Bioconductor package for Terra and Google Cloud Platform. This workshop 
+    will demostrate R-friendly usecases of Terra and presents live-demo session.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

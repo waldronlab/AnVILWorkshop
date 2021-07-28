@@ -28,7 +28,7 @@ tools. Below is the brief example of a few:
 
 |Platform | Hosted Data | Analysis Tools |
 |---|---|---|
-| [Terra](https://anvil.terra.bio/) | CCDG, eMERGE, TCGA, TARGET, TOPMed, etc. | WDL, Notebooks, RStudio, *Galaxy (coming soon)* |
+| [Terra](https://anvil.terra.bio/) | CCDG, eMERGE, TCGA, TARGET, TOPMed, etc. | WDL, Notebooks, RStudio, Galaxy |
 | [Seven Bridges](https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges) | TOPMed | CWL, Notebook, RStudio |
 | [Seven Bridges](http://www.cancergenomicscloud.org/)| TCGA, TARGET, ICGC, etc. | CWL, Notebook, RStudio |
 | [ISB-CGC](https://isb-cgc.appspot.com/) | TCGA, TARGET, etc. | GCP tools, such as Google BigQuery |
@@ -63,8 +63,7 @@ pipelines, collecting analysis templates, or all of above! - You can use a Terra
 workspace to keep all the components of your project - data, metadata, and analysis 
 tools as well as documentation and provenance - together.
 
-You can find more detail about workspace in here: [Intro to working with workspace](https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces) 
-- [video](https://youtu.be/ONc1Wf7rEuw) (By Broad's Terra team)
+You can find more detail about workspace in this article, [Intro to working with workspace](https://support.terra.bio/hc/en-us/articles/360024743371-Intro-to-working-with-workspaces), and [video](https://youtu.be/ONc1Wf7rEuw) by Broad's Terra team.
 
 ![](images/workspace.png)
 

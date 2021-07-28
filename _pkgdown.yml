@@ -26,10 +26,16 @@ navbar:
       menu:
       - text: AnVIL vignettes
         href: https://bioconductor.org/packages/release/bioc/vignettes/AnVIL/inst/doc/Introduction.html
+      - text: AnVILPublish vignettes
+        href: https://bioconductor.org/packages/release/bioc/vignettes/AnVILPublish/inst/doc/AnVILPublishIntro.html
       - text: Terra User Guide
         href: https://support.terra.bio/hc/en-us
+      - text: Use RStudio in Terra (video)
+        href: https://www.youtube.com/watch?v=JAcCtTkkvJw&t=125s
+      - text: Pop-up Workshop
+        href: https://docs.google.com/document/u/2/d/e/2PACX-1vSVGCaX-wnWyu1TUhhbsoVeTCJ6ODLG53OeMHKRbewGQOqOcMTnZQl7_jrR9kqOPQPlsFN1ecLT4lhd/pub
   right:
    - icon: fa-github
      href: https://github.com/waldronlab/AnVILWorkshop
-     
+
 

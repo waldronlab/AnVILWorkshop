@@ -1,0 +1,286 @@
+---
+title: "RunTerraWorkflow: Run workflows implemented in Terra"
+author: "Sehyun Oh"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Run bioBakey using RunTerraWorkflow package}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  comment = "#>", collapse = TRUE, fig.align = 'center', eval=FALSE
+)
+```
+
+
+
+# Overview
+For R users with the limited computing resources, we introduce the 
+RunTerraWorkflow package. This package allows users to run workflows 
+implemented in [Terra](https://app.terra.bio/#), a cloud-based genomics 
+platform, without writing any workflow, installing software, or managing cloud 
+resources. Terra's computing resources rely on Google Cloud Platform (GCP) and 
+to use RunTerraWorkflow, you only need to setup the Terra account once at the 
+beginning.
+
+
+## Create Terra account  
+You need [Terra account setup](https://support.terra.bio/hc/en-us/articles/360034677651-Account-setup-and-exploring-Terra). Once you have your own Terra account, you need 
+two pieces of information from it to use RunTerraWorkflow package: 
+1) the email address linked to your Terra account and 2) your billing 
+project name. Here are the basic input parameters used in this vignette. 
+**Modify these with YOUR account information!**
+
+```{r}
+accountEmail <- "shbrief@gmail.com"
+billingProjectName <- "waldronlab-terra-rstudio"
+```
+
+
+## Major steps 
+Here is the table of major functions for three workflow steps - prepare, run,
+and check result.
+
+| Steps | Functions | Description |
+|--------|-----------|-------------|
+| Prepare | `cloneWorkspace` | copy the template workspace |
+|          | `updateInput` | take user's inputs |
+| Run | `launchWorkflow` | launch the workflow in Terra |
+|          | `abortSubmission` | abort the submission |
+| Result | `monitorSubmission` | monitor the status of your workflow run |
+|          | `listOutput` | display the list of your workflow outputs |
+|          | `getOutput` | download your output |
+
+
+## Load packages
+```{r eval=TRUE, message=FALSE}
+if (!"RunTerraWorkflow" %in% installed.packages())
+    devtools::install_github("shbrief/RunTerraWorkflow")
+if (!"biobakeR" %in% installed.packages())
+    devtools::install_github("shbrief/biobakeR")
+if (!"AnVIL" %in% installed.packages())
+    BiocManager::install("AnVIL")
+
+library(RunTerraWorkflow)
+library(AnVIL)
+```
+
+
+## Google Cloud SDK
+If you use RunTerraWorkflow within Terra's RStudio, you don't need extra
+authentication and gcloud SDK. If you intend to use this package from local
+machine, it requires that the gcloud SDK is installed, and that the billing 
+account used by AnVIL can be authenticated with the user. These requirements 
+are satisfied when using the AnVIL compute cloud. For local use, one must [install](https://cloud.google.com/sdk/docs/install) the gcloud sdk.
+
+Test the installation with `AnVIL::gcloud_exists()`
+```{r}
+## gcloud_exists() should return TRUE
+gcloud_exists()
+```
+
+
+## Example: microbiome analysis
+In this vignette, we are running [Whole Metagenome Shotgun (wmgx) analysis workflow](https://github.com/biobakery/biobakery_workflows) using 
+[bioBakery](https://github.com/biobakery/biobakery/wiki) tools. You can find 
+the currently available workspaces using `availableAnalysis()` function and 
+the values under `analysis` column can be used for the analysis argument. For 
+this vignette, we use `"bioBakery"`. 
+
+```{r eval=TRUE}
+availableAnalysis()
+
+analysis <- "bioBakery"
+```
+
+
+
+# Setup
+## Clone Workspace
+First, you should clone the template workspace using `cloneWorkspace` function. 
+Note that you need to provide a **unique** name for the cloned workspace 
+through `workspaceName` argument.    
+
+```{r}
+workspaceName <- "biobakery_test"
+```
+
+If you attempt to clone the template workspace using the existing 
+workspaceName, you will get the below error message.
+
+```{r}
+cloneWorkspace(accountEmail, billingProjectName, workspaceName, analysis)
+```
+
+With the unique workspace name, you can successfully clone the workspace and 
+the function will return the name of the cloned workspace.
+
+```{r}
+cloneWorkspace(accountEmail, 
+               billingProjectName, 
+               workspaceName = "microbiome", 
+               analysis)
+```
+
+```{r echo=FALSE, message=FALSE}
+## Delete workspace
+resp <- AnVIL::Terra()$deleteWorkspace(workspaceNamespace = billingProjectName,
+                                       workspaceName = "microbiome")
+rm(resp)
+```
+
+
+## Prepare Input
+### Current input
+You can review the current inputs using `currentInput` function. Below shows all
+the required and optional inputs for the workflow.
+
+```{r}
+currentInput(accountEmail, billingProjectName, workspaceName)
+```
+
+<br>
+
+`biobakeR::biobakery_currentInput` is a variation of `currentInput` function 
+optimized for bioBakery workflow. It displays only the two major inputs - 
+`inputListPath` and `inputFilePath`. These two types of files should be stored 
+in Google bucket.   
+
+1) `inputFilePath` file contains the paths to the input fastq files     
+2) `inputListPath` file is a list of their paths as a txt file
+
+In other words, `inputFilePath` is the content of `inputListPath` - you save 
+fastq files and provide their file paths in the txt file.
+
+This vignette uses six fastq files for the test. Using preemptive instances, 
+this demo set will cost about $5 to run.
+
+```{r}
+biobakeR::biobakery_currentInput(accountEmail, 
+                                 billingProjectName, 
+                                 workspaceName)
+```
+
+
+### Update input
+Before launching the workflow, you should provide the correct input information 
+using `updateInput` function. RunTerraWorkflow doesn't support this function 
+yet, but the bioBakery-specific function is available through `biobakeR::biobakery_updateInput`.
+
+We use the six demo input files and their metadata.
+
+```{r}
+input <- "gs://run_terra_workflow/IBDMDB/ibdmdb_file_list.txt"
+inputMeta <- "gs://run_terra_workflow/IBDMDB/ibdmdb_demo_metadata.txt"
+
+biobakeR::biobakery_updateInput(accountEmail, billingProjectName, workspaceName,
+                                InputRead1Files = input,
+                                InputMetadataFile = inputMeta,
+                                AdapterType = "NexteraPE",
+                                ProjectName = "ibdmdb_test",
+                                InputExtension = ".fastq.gz",
+                                InputRead1Identifier = "_R1",
+                                InputRead2Identifier = "_R2")
+```
+
+
+
+# Run bioBakery workflow
+Once you clone the template workspace and update the input with your own 
+data, you can launch the workflow using `launchWorkflow` function.
+
+```{r}
+launchWorkflow(accountEmail, billingProjectName, workspaceName)
+```
+
+## Monitor Progress
+The last three columns show the submission and the result status.
+
+```{r}
+submissions <- monitorSubmission(accountEmail, 
+                                 billingProjectName, 
+                                 workspaceName)
+submissions
+```
+
+## Abort submission
+To abort the most recently submitted job, you don't need to specify 
+`submissionId`.
+
+```{r}
+abortSubmission(accountEmail, billingProjectName, workspaceName)
+```
+
+
+# Result
+## List Outputs 
+You can check all the output files from the most recently succeeded submission.
+If you specify the `submissionId` argument, you can get the output files of that
+specific submission. Output files can also be subset using `keyword` argument.
+
+```{r}
+listOutput(accountEmail, billingProjectName, workspaceName)
+```
+
+```{r}
+listOutput(accountEmail, billingProjectName, workspaceName, keyword = "humann")
+```
+
+
+```{r echo=FALSE, eval=FALSE}
+## Find a specific submissionId
+jobs <- RunTerraWorkflow::monitorSubmission(accountEmail, 
+                                            billingProjectName, 
+                                            workspaceName)
+jobs_succeed <- which(jobs$succeeded == 1)
+jobs[jobs_succeed,]
+
+submission_id <- jobs[jobs_succeed,]$submissionId[1]
+submission_id
+```
+
+If your outputs include tsv files, you can check the head of those files 
+using `tableHead` function without downloading them. 
+
+```{r warning=FALSE}
+tableHead("HSM7J4NY_genefamilies_relab.tsv", n = 6,
+          accountEmail, billingProjectName, workspaceName)   
+```
+
+
+## Get Outputs
+`keyword` argument takes a character string containing a regular expression. In
+the example below, we check all the `.tsv` outputs of the sample, "HSM7J4NY".
+
+```{r}
+listOutput(accountEmail, billingProjectName, workspaceName, 
+           keyword = "HSM7J4NY.*.tsv")
+```
+
+You can download any file using `getOutput` function. Here, we narrow down the 
+download to HSM7J4NY sample's `.tsv` output files.
+
+```{r echo=FALSE}
+HSM7J4NY_dir <- "~/data2/RunTerraWorkflow/inst/extdata/outputs/HSM7J4NY/"
+```
+
+```{r eval=FALSE}
+getOutput(accountEmail, billingProjectName, workspaceName, 
+          keyword = "HSM7J4NY.*.tsv", dest_dir = HSM7J4NY_dir)
+```
+
+```{r}
+list.files(HSM7J4NY_dir)
+```
+
+# Session Info
+```{r}
+sessionInfo()
+```
