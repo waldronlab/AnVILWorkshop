@@ -7,10 +7,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 output:
-  BiocStyle::html_document:
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
+  html_document:
+    mathjax: null
 ---
 
 
