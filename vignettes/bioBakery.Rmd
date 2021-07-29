@@ -60,7 +60,7 @@ and check result.
 
 
 ## Load packages
-```{r eval=TRUE, message=FALSE}
+```{r message=FALSE}
 if (!"RunTerraWorkflow" %in% installed.packages())
     devtools::install_github("shbrief/RunTerraWorkflow")
 if (!"biobakeR" %in% installed.packages())
@@ -94,7 +94,7 @@ the currently available workspaces using `availableAnalysis()` function and
 the values under `analysis` column can be used for the analysis argument. For 
 this vignette, we use `"bioBakery"`. 
 
-```{r eval=TRUE}
+```{r}
 availableAnalysis()
 
 analysis <- "bioBakery"
