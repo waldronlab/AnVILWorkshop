@@ -22,7 +22,7 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown
-URL: https://shbrief.github.io/AnVILWorkshop/
-BugReports: https://github.com/shbrief/AnVILWorkshop/issues/new/choose
+URL: https://waldronlab.github.io/AnVILWorkshop/
+BugReports: https://github.com/waldronlab/AnVILWorkshop/issues/new/choose
 VignetteBuilder: knitr
 DockerImage: shbrief/anvilworkshop
