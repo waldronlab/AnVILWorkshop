@@ -5,15 +5,16 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnVILWorkshop2020 • AnVILWorkshop</title>
+<title>Terra/AnVIL Workshop 2021 • AnVILWorkshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="AnVILWorkshop2020">
-<meta property="og:description" content="We introduce cloud-based genomics platofrm, Terra, and Bioconductor
-    package AnVIL for R-friendly usage of Terra.">
+<script src="pkgdown.js"></script><meta property="og:title" content="Terra/AnVIL Workshop 2021">
+<meta property="og:description" content="We introduce Terra, a cloud-based genomics platofrm, and AnVIL, a 
+    Bioconductor package for Terra and Google Cloud Platform. This workshop 
+    will demostrate R-friendly usecases of Terra and presents live-demo session.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -38,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">AnVILWorkshop</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -73,7 +74,16 @@
       <a href="https://bioconductor.org/packages/release/bioc/vignettes/AnVIL/inst/doc/Introduction.html">AnVIL vignettes</a>
     </li>
     <li>
+      <a href="https://bioconductor.org/packages/release/bioc/vignettes/AnVILPublish/inst/doc/AnVILPublishIntro.html">AnVILPublish vignettes</a>
+    </li>
+    <li>
       <a href="https://support.terra.bio/hc/en-us">Terra User Guide</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=JAcCtTkkvJw&amp;t=125s">Use RStudio in Terra (video)</a>
+    </li>
+    <li>
+      <a href="https://docs.google.com/document/u/2/d/e/2PACX-1vSVGCaX-wnWyu1TUhhbsoVeTCJ6ODLG53OeMHKRbewGQOqOcMTnZQl7_jrR9kqOPQPlsFN1ecLT4lhd/pub">Pop-up Workshop</a>
     </li>
   </ul>
 </li>
@@ -109,6 +119,7 @@
 Levi Waldron* <a href="mailto:Levi.Waldron@sph.cuny.edu" class="email">Levi.Waldron@sph.cuny.edu</a> [1]<br>
 Lori Shepherd <a href="mailto:lori.shepherd@roswellpark.org" class="email">lori.shepherd@roswellpark.org</a> [2]<br>
 Nitesh Turaga <a href="mailto:Nitesh.Turaga@roswellpark.org" class="email">Nitesh.Turaga@roswellpark.org</a> [2]<br>
+Kayla Interdonato <a href="mailto:Kayla.Morrell@roswellpark.org" class="email">Kayla.Morrell@roswellpark.org</a> [2]<br>
 Martin Morgan <a href="mailto:martin.morgan@roswellpark.org" class="email">martin.morgan@roswellpark.org</a> [2]<br>
 BJ Stubbs <a href="mailto:rebjh@channing.harvard.edu" class="email">rebjh@channing.harvard.edu</a> [3]<br>
 Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@channing.harvard.edu</a> [3]</p>
@@ -131,13 +142,13 @@ Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@chan
 </li>
 </ul>
 <ol>
-<li>Visit <a href="https://app.terra.bio/#" class="uri">https://app.terra.bio/#</a><br>
+<li>Visit <a href="https://anvil.terra.bio/#" class="uri">https://anvil.terra.bio/#</a><br>
 </li>
 <li>Select the ‘HAMBURGER’ menu in the top left corner<br>
 </li>
 <li>Choose ‘Sign in with Google’</li>
 </ol>
-<p><img src="articles/images/signin.png" alt="Sign-in" style="width:150px;height:250px;"></p>
+<p><img src="articles/images/signin.png" alt="Sign-in" style="width:150px;height:200px;"></p>
 <ul>
 <li>[Optional] Start notebook runtime for live-demo –&gt; Follow the first section, <em>Demo Workspace</em>, of <a href="http://waldronlab.io/AnVILWorkshop/articles/live-demo.html">Live Demo</a>
 </li>
@@ -166,7 +177,7 @@ Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@chan
 <tbody>
 <tr class="odd">
 <td>Account Setup</td>
-<td>5m</td>
+<td>10m</td>
 </tr>
 <tr class="even">
 <td>Overview</td>
@@ -174,11 +185,11 @@ Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@chan
 </tr>
 <tr class="odd">
 <td>Use Cases</td>
-<td>10m</td>
+<td>20m</td>
 </tr>
 <tr class="even">
 <td>Live Demo</td>
-<td>25m</td>
+<td>45m</td>
 </tr>
 </tbody>
 </table>
@@ -190,7 +201,7 @@ Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@chan
 <li>Gain familiarity with cloud-based genomics platforms</li>
 <li>Learn how to access data sets and tools provided through Terra</li>
 <li>Learn how to use interactive analysis apps, including group sharing of a workspace and billing</li>
-<li>Understand the benefit and shortcome of Terra</li>
+<li>Understand the benefit and shortcoming of Terra</li>
 </ul>
 </div>
 <div id="specific-objectives" class="section level2">
@@ -215,7 +226,7 @@ Vince Carey <a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@chan
 <div id="links" class="section level4">
 <h4 class="hasAnchor">
 <a href="#links" class="anchor"></a>Links</h4>
-<p>AnVIL project website: <a href="https://anvilproject.org/" class="uri">https://anvilproject.org/</a><br>
+<p>Bioconductor AnVIL: <a href="https://anvil.bioconductor.org/" class="uri">https://anvil.bioconductor.org/</a> AnVIL project website: <a href="https://anvilproject.org/" class="uri">https://anvilproject.org/</a><br>
 AnVIL Terra: <a href="https://anvil.terra.bio/" class="uri">https://anvil.terra.bio/</a><br>
 Dockstore: <a href="https://dockstore.org/" class="uri">https://dockstore.org/</a><br>
 GEN3: <a href="https://gen3.org/" class="uri">https://gen3.org/</a></p>
@@ -258,7 +269,7 @@ GEN3: <a href="https://gen3.org/" class="uri">https://gen3.org/</a></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
