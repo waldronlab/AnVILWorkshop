@@ -2,7 +2,7 @@ on: [push, pull_request]
 
 env:
   cache-version: v1
-  repo-name: ${{ github.repository }}
+  repo-name: shbrief/anvilworkshop
 
 jobs:
   job1:
