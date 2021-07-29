@@ -7,10 +7,8 @@ vignette: >
   %\VignetteIndexEntry{Run bioBakey using RunTerraWorkflow package}
   %\VignetteEncoding{UTF-8}
 output:
-  BiocStyle::html_document:
-    number_sections: yes
-    toc: yes
-    toc_depth: 4
+  html_document:
+    mathjax: null
 ---
 
 ```{r setup, include = FALSE}
