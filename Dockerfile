@@ -2,6 +2,7 @@ FROM bioconductor/bioconductor_docker:devel
 
 WORKDIR /home/rstudio
 
+# Make the workshop repo under rstudio directory
 COPY --chown=rstudio:rstudio . /home/rstudio/AnVILWorkshop
 
 # Add the Cloud SDK distribution URI as a package source
@@ -17,4 +18,6 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.c
 RUN pip3 install notedown
 ENV PATH $PATH:/home/rstudio/.local/bin
 
-RUN Rscript -e "devtools::install('.', dependencies=TRUE, build_vignettes=TRUE, repos = BiocManager::repositories())"
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(ask=FALSE)"
+# Install under the repo because working directory is upstream
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); devtools::install('AnVILWorkshop', dependencies=TRUE, build_vignettes=TRUE, repos = BiocManager::repositories())"
