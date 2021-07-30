@@ -2,7 +2,7 @@ FROM bioconductor/bioconductor_docker:devel
 
 WORKDIR /home/rstudio
 
-COPY --chown=rstudio:rstudio . /home/
+COPY --chown=rstudio:rstudio . /home/rstudio/
 
 # Add the Cloud SDK distribution URI as a package source
 # Import the Google Cloud public key
