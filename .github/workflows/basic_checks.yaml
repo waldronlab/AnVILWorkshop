@@ -2,7 +2,7 @@ on: [push, pull_request]
 
 env:
   cache-version: v1
-  repo-name: shbrief/anvilworkshop
+  repo-name: waldronlab/anvilworkshop
 
 jobs:
   job1:
