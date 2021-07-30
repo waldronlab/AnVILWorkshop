@@ -21,4 +21,4 @@ ENV PATH $PATH:/home/rstudio/.local/bin
 
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(ask=FALSE)"
 # Install under the repo because working directory
-RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); devtools::install('AnVILWorkshop', dependencies=TRUE, build_vignettes=TRUE, repos = BiocManager::repositories())"
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); devtools::install('.', dependencies=TRUE, build_vignettes=TRUE, repos = BiocManager::repositories())"
