@@ -43,9 +43,7 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 2. Select the ‘HAMBURGER’ menu in the top left corner   
 3. Choose ‘Sign in with Google’   
 
-<img src="vignettes/images/signin.png" alt="Sign-in" style="width:150px;height:200px;">
-
-* [Optional] Start notebook runtime for live-demo --> Follow the first section, *Demo Workspace*, of [Live Demo](http://waldronlab.io/AnVILWorkshop/articles/live-demo.html)
+<img src="https://raw.githubusercontent.com/waldronlab/AnVILWorkshop/master/vignettes/images/signin.png" alt="Sign-in" style="width:140px;height:200px;">
 
 ## Workshop Participation
 
@@ -53,7 +51,8 @@ Participants will have the opportunity to access a pre-populated Terra workspace
 
 ## _R_ / _Bioconductor_ packages used
 
-* [AnVIL](https://github.com/Bioconductor/AnVIL)
+* [AnVIL](https://bioconductor.org/packages/release/bioc/html/AnVIL.html)
+* [AnVILPublish](https://bioconductor.org/packages/release/bioc/html/AnVILPublish.html)
 
 ## Time outline
 
@@ -86,6 +85,7 @@ NHGRI supports AnVIL through [cooperative agreement awards](https://www.genome.g
 
 #### Links
 Bioconductor AnVIL: https://anvil.bioconductor.org/
+BioC-AnVIL Pop-up workshop : https://anvilproject.org/learn/data-analysts#bioconductor-popup-workshops
 AnVIL project website: https://anvilproject.org/   
 AnVIL Terra: https://anvil.terra.bio/   
 Dockstore: https://dockstore.org/   

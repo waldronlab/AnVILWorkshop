@@ -62,6 +62,8 @@ Bioconductor,...).
 
 
 # Terra in the classroom 
+Find out how to use Terra/AnVIL for teaching R/Bioconductor [**HERE**](https://docs.google.com/document/d/1fNNn3kleLrZLiXHsaUz7z2Et3kZ-IpIcBTlYzCYmscI/edit#heading=h.vjjftpr63rnl)!
+
 ### Share Workspace
 Terra workspace allows setup of a lecture or lab in advance of sharing it, where 
 everyone uses the same runtime environment - no setup or compatibility issues. Also, 

@@ -38,26 +38,25 @@ tools. Below is the brief example of a few:
 In this workshop, we are focusing on Terra. Terra is the analysis platform  of [AnVIL](https://anvilproject.org/) (Analysis, Visualization and Informatics Lab-space) project launched by NHGRI.
 
 #### Terra provides:   
-**1. Data** : secure remote access to public geneomic data without paying storage (powered by [GEN3](https://gen3.org/))       
-**2. Workflows** : best practice tools and pipelines already implemented (powered by [Dockstore](https://dockstore.org/))    
+**1. Data** : secure remote access to public genomic data without paying storage 
+(powered by [GEN3](https://gen3.org/))       
+**2. Workflows** : best practice tools and pipelines already implemented 
+(powered by [Dockstore](https://dockstore.org/))    
 **3. Notebooks** : interactive analysis interfaces such as Jupyter notebook (default), 
-RStudio (custom environemtn), and Galaxy (coming soon)       
+RStudio, and Galaxy.       
 **4. On-demand computational capacity** through Google Cloud Platform   
 
 ![(From MaGIC Jamboree)](images/AnVIL_ecosystem.png)
 
-### What kind of analysis can you do on Terra?
-Currently, [Terra supports two modes of analysis](https://support.terra.bio/hc/en-us/articles/360022714931-What-kind-of-analysis-can-you-do-on-Terra-). 
-
-**1. Batch processing** with workflows, which includes but is not limited to: Read 
-alignment, Variant calling, Joint filtering    
-**2. Interactive analysis**, which includes but is not limited to: R/Python-based 
-downstream analysis, BigQuery, Hail   
+#### Free Credits
+If you want to try Terra after the conference, you can claim $300 Google credits
+following [this instruction](https://support.terra.bio/hc/en-us/articles/360046295092).
+ 
 
 <br>
 
 # Workspace
-Workspace is **the main buildling block** of Terra, where different resources are delivered 
+Workspace is **the main building block** of Terra, where different resources are delivered 
 through. Depending on your goal, you can use a workspace for hosting data, building production
 pipelines, collecting analysis templates, or all of above! - You can use a Terra 
 workspace to keep all the components of your project - data, metadata, and analysis 
@@ -98,8 +97,7 @@ Library submenu, you can see the list of Terra's major resources: Data, Showcase
 
 ## Data
 Terra hosts both open- and controlled-access datasets. Select datasets have built-in 
-functionality ("Data Explorers) for exploring - and creating customized subsets from 
-- the data. 
+functionality ("Data Explorers") for exploring and creating customized subsets from the data. 
 
 Here are the available datasets in Terra through various awards:   
 - AnVIL : CCDG (Centers for Common Disease Genomics), CMG (Center for Mendelian genomics), 
