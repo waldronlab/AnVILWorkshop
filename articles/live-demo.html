@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AnVILWorkshop</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -109,7 +109,7 @@
       <h1 data-toc-skip>Live Demo</h1>
                         <h4 class="author">Sehyun Oh</h4>
             
-            <h4 class="date">July 31, 2021</h4>
+            <h4 class="date">August 03, 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/waldronlab/AnVILWorkshop/blob/master/vignettes/live-demo.Rmd"><code>vignettes/live-demo.Rmd</code></a></small>
       <div class="hidden name"><code>live-demo.Rmd</code></div>
@@ -169,9 +169,12 @@
 </ul>
 <p><img src="images/RNAseq_inputs.png"><img src="images/RNAseq_outputs.png"></p>
 </div>
-<div id="downstream-analysis" class="section level2">
+<div id="interactive-analysis" class="section level2">
 <h2 class="hasAnchor">
-<a href="#downstream-analysis" class="anchor"></a>Downstream analysis</h2>
+<a href="#interactive-analysis" class="anchor"></a>Interactive analysis</h2>
+<div id="set-up-cloud-environment" class="section level3">
+<h3 class="hasAnchor">
+<a href="#set-up-cloud-environment" class="anchor"></a>Set up cloud environment</h3>
 <ul>
 <li>Start a Jupyter Notebook interactive environment</li>
 </ul>
@@ -192,6 +195,29 @@
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pkgs</span> <span class="op">&lt;</span>- c<span class="er">(</span><span class="st">"Bioconductor/AnVIL"</span><span class="ex">,</span> <span class="st">"GenomicFeatures"</span>, <span class="st">"tximport"</span>, <span class="st">"DESeq2"</span><span class="kw">)</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">BiocManager::install</span><span class="er">(</span><span class="ex">pkgs</span><span class="kw">)</span>    <span class="co"># latest AnVIL package</span></span></code></pre></div>
 </div>
+<div id="contents" class="section level3">
+<h3 class="hasAnchor">
+<a href="#contents" class="anchor"></a>Contents</h3>
+<ul>
+<li><p>Notebooks A, B and C describe how the workspace was set up; review at your leisure. This material may be useful when running on your own data.</p></li>
+<li>
+<p>Notebook D_ManagingWorkflowOutput</p>
+<ul>
+<li>Extracts relevant files from the workflow output to the local disk</li>
+<li>Open in ‘EDIT’ mode</li>
+<li>Enter each evaluation cell and press <return></return>
+</li>
+</ul>
+</li>
+<li>
+<p>Notebook E_DESeq2Analysis</p>
+<ul>
+<li>Creates an object suitable for use in the <a href="http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html">DESeq2</a> vignette.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="genomicsupersignature" class="section level1">
 <h1 class="hasAnchor">
@@ -205,25 +231,20 @@
 <p>If necessary, install the AnVILPublish library.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="st">"AnVILPublish"</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-    <span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"AnVILPublish"</span><span class="op">)</span>
-<span class="co">#&gt; 'getOption("repos")' replaces Bioconductor standard repositories, see</span>
-<span class="co">#&gt; '?repositories' for details</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; replacement repositories:</span>
-<span class="co">#&gt;     CRAN: https://packagemanager.rstudio.com/all/__linux__/focal/latest</span>
-<span class="co">#&gt; Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.0 (2021-05-18)</span>
-<span class="co">#&gt; Installing package(s) 'AnVILPublish'</span>
-<span class="co">#&gt; also installing the dependencies 'bit', 'bit64', 'progress', 'hms', 'vroom', 'tzdb', 'readr'</span></code></pre></div>
+    <span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"AnVILPublish"</span><span class="op">)</span></code></pre></div>
 <p>There are only a small number of functions in the package; it is likely best practice to invoke these using <code>AnVILPublish::...()</code> rather than attaching the package to the search path.</p>
 </div>
 <div id="the-gcloud-sdk" class="section level3">
 <h3 class="hasAnchor">
 <a href="#the-gcloud-sdk" class="anchor"></a>The <code>gcloud</code> SDK</h3>
-<p>It is necessary to have the [gcloud SDK][<a href="https://cloud.google.com/sdk" class="uri">https://cloud.google.com/sdk</a>] available to copy notebook files to the workspace. Test availability with</p>
+<p>It is necessary to have the <a href="https://cloud.google.com/sdk">gcloud SDK</a> available to copy notebook files to the workspace. Test availability with</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">AnVIL</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_exists</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>and verify that the account and project are appropriate (consistent with AnVIL credentials) for use with AnVIL.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">AnVIL</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_account</a></span><span class="op">(</span><span class="st">"shbrief@gmail.com"</span><span class="op">)</span>  <span class="co"># UPDATE WITH YOUR EMAIL!!!</span>
+<span class="fu">AnVIL</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_project</a></span><span class="op">(</span><span class="st">"bioc2021-workshop"</span><span class="op">)</span></code></pre></div>
+<p>and verify that the account and project are appropriate (consistent with AnVIL credentials) for use with AnVIL.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">AnVIL</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_account</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">AnVIL</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVIL/man/gcloud.html">gcloud_project</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Note that these be used to set, as well as interrogate, the account and project.</p>
@@ -231,35 +252,69 @@
 <div id="notedown-software" class="section level3">
 <h3 class="hasAnchor">
 <a href="#notedown-software" class="anchor"></a><code>notedown</code> software</h3>
-<p>Conversion of .Rmd vignettes to .ipynb notebooks uses [notedown][<a href="https://github.com/aaren/notedown" class="uri">https://github.com/aaren/notedown</a>] python software. It must be available from within <em>R</em>, e.g.,</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<p>Conversion of .Rmd vignettes to .ipynb notebooks uses <a href="https://github.com/aaren/notedown">notedown</a> python software. It must be available from within <em>R</em>, e.g.,</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system2.html">system2</a></span><span class="op">(</span><span class="st">"notedown"</span>, <span class="st">"--version"</span><span class="op">)</span></code></pre></div>
 </div>
-</div>
-<div id="workspace-from-package-source" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workspace-from-package-source" class="anchor"></a>Workspace from package source</h2>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">AnVILPublish</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVILPublish/man/as_workspace.html">as_workspace</a></span><span class="op">(</span>
+<div id="workspace-from-package-source" class="section level3">
+<h3 class="hasAnchor">
+<a href="#workspace-from-package-source" class="anchor"></a>Workspace from package source</h3>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">AnVILPublish</span><span class="fu">::</span><span class="fu">as_workspace</span><span class="op">(</span>
     <span class="st">"path/to/package"</span>,
     <span class="st">"billing-project-name"</span>,     <span class="co"># i.e., billing account</span>
     create <span class="op">=</span> <span class="cn">TRUE</span>               <span class="co"># use update = TRUE for an existing workspace</span>
 <span class="op">)</span></code></pre></div>
-<p>Below is the script I ran to create this workspace (<a href="https://anvil.terra.bio/#workspaces/bioc2021-workshop/Bioconductor-Package-GenomicSuperSignature">link</a>).</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">AnVILPublish</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AnVILPublish/man/as_workspace.html">as_workspace</a></span><span class="op">(</span>
-    path <span class="op">=</span> <span class="st">"~/data2/GenomicSuperSignature/"</span>,   <span class="co"># package source</span>
+<p>For this vignette, I cloned GenomicSuperSignature repo through https.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/shbrief/GenomicSuperSignature.git</span></code></pre></div>
+<p>From the below code, I create <a href="https://anvil.terra.bio/#workspaces/bioc2021-workshop/Bioconductor-Package-GenomicSuperSignature">this workspace</a>.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">AnVILPublish</span><span class="fu">::</span><span class="fu">as_workspace</span><span class="op">(</span>
+    path <span class="op">=</span> <span class="st">"/home/rstudio/GenomicSuperSignature/"</span>,   <span class="co"># package source</span>
     namespace <span class="op">=</span> <span class="st">"bioc2021-workshop"</span>,   <span class="co"># billing account</span>
     create <span class="op">=</span> <span class="cn">TRUE</span>,
     use_readme <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
 </div>
+</div>
 <div id="analysis-in-rstudio" class="section level2">
 <h2 class="hasAnchor">
 <a href="#analysis-in-rstudio" class="anchor"></a>Analysis in RStudio</h2>
+<div id="clone-workspace-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#clone-workspace-1" class="anchor"></a>Clone workspace</h3>
+<p>We will try GenomicSuperSignature <a href="https://shbrief.github.io/GenomicSuperSignaturePaper/">analyses</a> using RStudio in Terra.</p>
+<p>First, clone the workspace using this billing address:<br>
+- Template workspace : <code>bioc2021-workshop-rstudio/GenomicSuperSignaturePaper</code><br>
+- Billing : <code>bioc2021-workshop-rstudio</code></p>
+</div>
+<div id="choose-cloud-environment" class="section level3">
+<h3 class="hasAnchor">
+<a href="#choose-cloud-environment" class="anchor"></a>Choose cloud environment</h3>
 <p>You can choose the cloud environment of your workspace at the project level. Currently, to use RStudio in Terra, you should use one of the custom environments. Below screen captures show how to do it.</p>
-<p><img src="images/rstudio_cloud_env.png"> Once your RStudio is running, clone the git repository.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/shbrief/GenomicSuperSignaturePaper.git</span></code></pre></div>
+<p><img src="images/rstudio_cloud_env.png"></p>
+<p>1 &amp; 2. At the top right, click on “Cloud Environment” and click “Customize”<br>
+3 &amp; 4. Under “Application Configuration” choose a community-maintained RStudio environment, “RStudio”. Select CPU 4 for our example. (You can reduce the number of CPUs to 2 and the persistent disk size to 20GB to reduce the costs, unless you need more. You can always increase them later at any time.) Click “Create”.</p>
+<p><br></p>
+<p>You should then see an R icon in the top-right hand corner, which starts RStudio in your browser. The first time you do this, or after you haven’t used it for some hours, it will take a minute or two to start up. You won’t have to repeat this unless you want to change your compute resources.</p>
+<p><img src="images/rstudio_icon.png"></p>
+<p>Terra will pause the computing environment automatically after a period of inactivity to avoid unnecessary costs, and you can tune the compute resources to what you need for your analysis. You can upload and download files through RStudio. Your work will remain saved on your persistent disk.</p>
+</div>
+<div id="install-packages-download-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#install-packages-download-data" class="anchor"></a>Install packages/ Download data</h3>
+<p>Once your RStudio is ready, run the start-up script from <strong>terminal</strong>, This start-up script is written under the DASHBOARD. This will take a few minutes.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">'BiocManager::install("AnVIL");</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">      fpath &lt;- AnVIL::avbucket(namespace = "bioc2021-workshop-rstudio", name = "GenomicSuperSignaturePaper");</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">      fnames &lt;- AnVIL::avfiles_ls(namespace = "bioc2021-workshop-rstudio", name = "GenomicSuperSignaturePaper");</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st">      AnVIL::gsutil_cp(file.path(fpath, fnames), ".")'</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 711 startup.sh</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./startup.sh</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> /home/rstudio/install_R_pkgs.R</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> /home/rstudio/pkgs_to_install.rds</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> /home/rstudio/startup.sh</span></code></pre></div>
+</div>
 </div>
 </div>
 <div id="microbiome-analysis" class="section level1">
@@ -268,7 +323,7 @@
 <div id="runnable-workflow-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#runnable-workflow-package" class="anchor"></a>Runnable workflow package</h2>
-<p>For R users with the limited computing resources, we introduce RunTerraWorkflow package. This package allows users to run workflows implemented in <a href="https://app.terra.bio/#">Terra</a> without writing any workflow, installing softwares, or managing cloud resources. Terra’s computing resources rely on Google Cloud Platform (GCP) and to use RunTerraWorkflow, you only need to setup the Terra account once at the beginning.</p>
+<p>For R users with the limited computing resources, we introduce RunTerraWorkflow package. This package allows users to run workflows implemented in <a href="https://app.terra.bio/#">Terra</a> without writing any workflow, installing software, or managing cloud resources. Terra’s computing resources rely on Google Cloud Platform (GCP) and to use RunTerraWorkflow, you only need to setup the Terra account once at the beginning.</p>
 <p>Using <a href="https://github.com/Bioconductor/AnVIL">AnVIL</a> package, RunTerraWorkflow allows users to access both Terra and GCP through R session from a conventional laptop, greatly lowers the learning curve for high-performance, cloud-based genomics resources.</p>
 <p><img src="https://raw.githubusercontent.com/shbrief/RunTerraWorkflow/master/inst/extdata/runnable_workflow.png?token=ADX67SQPCAGDGWQZCGQMIBTAJGHKC" width="90%" height="90%"></p>
 </div>
