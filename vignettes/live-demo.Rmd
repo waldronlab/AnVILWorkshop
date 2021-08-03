@@ -97,7 +97,7 @@ leisure. This material may be useful when running on your own data.
 ### Package installation
 If necessary, install the AnVILPublish library.
 
-```{r message=FALSE}
+```{r message=FALSE, eval=FALSE}
 if (!"AnVILPublish" %in% rownames(installed.packages()))
     BiocManager::install("AnVILPublish")
 ```
@@ -121,7 +121,7 @@ AnVIL::gcloud_project("bioc2021-workshop")
 
 and verify that the account and project are appropriate (consistent
 with AnVIL credentials) for use with AnVIL.
-```{r}
+```{r eval=FALSE}
 AnVIL::gcloud_account()
 AnVIL::gcloud_project()
 ```
@@ -151,7 +151,7 @@ AnVILPublish::as_workspace(
 ```
 
 For this vignette, I cloned GenomicSuperSignature repo through https.
-```{bash}
+```{bash eval=FALSE}
 git clone https://github.com/shbrief/GenomicSuperSignature.git
 ```
 
