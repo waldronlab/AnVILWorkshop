@@ -54,7 +54,7 @@ analysis by DESeq2 is available under NOTEBOOKS.
   - RUN ANALYSIS
 
 ![](images/RNAseq_inputs.png)
-![](images/RNAseq_outputs.png)
+![](images/RNAseq_outputs.png) 
 
 ## Interactive analysis   
 ### Set up cloud environment  
@@ -90,3 +90,5 @@ leisure. This material may be useful when running on your own data.
 
 * Notebook E_DESeq2Analysis
   - Creates an object suitable for use in the [ DESeq2](http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html) vignette.
+
+![](images/deseq2_notebooks.png) 
