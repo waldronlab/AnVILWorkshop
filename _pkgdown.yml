@@ -33,7 +33,7 @@ navbar:
       - text: Use RStudio in Terra (video)
         href: https://www.youtube.com/watch?v=JAcCtTkkvJw&t=125s
       - text: Pop-up Workshop
-        href: https://docs.google.com/document/u/2/d/e/2PACX-1vSVGCaX-wnWyu1TUhhbsoVeTCJ6ODLG53OeMHKRbewGQOqOcMTnZQl7_jrR9kqOPQPlsFN1ecLT4lhd/pub
+        href: https://anvilproject.org/learn/data-analysts#bioconductor-popup-workshops
   right:
    - icon: fa-github
      href: https://github.com/waldronlab/AnVILWorkshop

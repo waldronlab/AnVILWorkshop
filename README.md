@@ -7,7 +7,8 @@ Sehyun Oh* <Sehyun.Oh@sph.cuny.edu> [1]
 Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1]   
 Lori Shepherd <lori.shepherd@roswellpark.org> [2]   
 Nitesh Turaga <Nitesh.Turaga@roswellpark.org> [2]    
-Kayla Interdonato <Kayla.Morrell@roswellpark.org> [2]   
+Kayla Interdonato <Kayla.Morrell@roswellpark.org> [2] 
+Marcel Ramos <marcel.ramos@roswellpark.org> [2]
 Martin Morgan <martin.morgan@roswellpark.org> [2]      
 BJ Stubbs <rebjh@channing.harvard.edu> [3]   
 Vince Carey <stvjc@channing.harvard.edu> [3]       
@@ -85,7 +86,6 @@ NHGRI supports AnVIL through [cooperative agreement awards](https://www.genome.g
 
 #### Links
 Bioconductor AnVIL: https://anvil.bioconductor.org/
-BioC-AnVIL Pop-up workshop : https://anvilproject.org/learn/data-analysts#bioconductor-popup-workshops
 AnVIL project website: https://anvilproject.org/   
 AnVIL Terra: https://anvil.terra.bio/   
 Dockstore: https://dockstore.org/   

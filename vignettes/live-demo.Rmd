@@ -173,9 +173,14 @@ AnVILPublish::as_workspace(
 We will try GenomicSuperSignature [analyses](https://shbrief.github.io/GenomicSuperSignaturePaper/) 
 using RStudio in Terra. 
 
-First, clone the workspace using this billing address:   
-  - Template workspace : `bioc2021-workshop-rstudio/GenomicSuperSignaturePaper`   
-  - Billing : `bioc2021-workshop-rstudio`
+First, clone the template workspace.
+1. Login to Terra and navigate to **"GenomicSuperSignaturePaper"** workspace  
+2. Clone this workspace:    
+- Assign a *unique* workspace name   
+- Use the billing project, **"bioc2021-workshop-rstudio"**   
+
+![](images/gss_setup_1.png)
+![](images/gss_setup_2.png)
 
 ### Choose cloud environment
 You can choose the cloud environment of your workspace at the project level.
