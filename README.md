@@ -4,12 +4,13 @@
 
 ## Instructor names and contact information
 Sehyun Oh* <Sehyun.Oh@sph.cuny.edu> [1]   
-Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1]   
+Levi Waldron* <Levi.Waldron@sph.cuny.edu> [1]      
+Jennifer Wokaty <jennifer.wokaty@gmail.com> [1]    
 Lori Shepherd <lori.shepherd@roswellpark.org> [2]   
-Nitesh Turaga <Nitesh.Turaga@roswellpark.org> [2]    
 Kayla Interdonato <Kayla.Morrell@roswellpark.org> [2]    
 Marcel Ramos <marcel.ramos@roswellpark.org> [2]   
-Martin Morgan <martin.morgan@roswellpark.org> [2]         
+Martin Morgan <martin.morgan@roswellpark.org> [2]       
+Nitesh Turaga <nturaga.bioc@gmail.com> [3]     
 BJ Stubbs <rebjh@channing.harvard.edu> [3]   
 Vince Carey <stvjc@channing.harvard.edu> [3]       
 
@@ -61,8 +62,9 @@ Participants will have the opportunity to access a pre-populated Terra workspace
 |-------------------------------------------------------|------|
 | Account Setup                                         | 10m  |
 | Overview                                              | 15m  |
-| Use Cases                                             | 20m  |
-| Live Demo                                             | 45m  |
+| Use Cases                                             | 15m  |
+| Live Demo                                             | 20m  |
+| Hands-on Session                                      | 30m  |
 
 
 ## Learning Goals

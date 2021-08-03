@@ -1,6 +1,6 @@
 Package: AnVILWorkshop
 Title: Cloud-based Genomics using Terra/AnVIL
-Version: 0.2.2
+Version: 0.2.3
 Date: 2021-08-03
 Authors@R: 
     person(given = "Sehyun",

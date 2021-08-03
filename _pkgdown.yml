@@ -22,6 +22,8 @@ navbar:
         href: articles/usecase.html
       - text: Live demo
         href: articles/live-demo.html
+      - text: Hands-on
+        href: articles/hands-on.html
     - text: Reference
       menu:
       - text: AnVIL vignettes
