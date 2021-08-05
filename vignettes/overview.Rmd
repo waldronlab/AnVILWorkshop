@@ -140,6 +140,8 @@ This section also includes links to other helpful open source workflow repositor
 
 ![](images/code_workflows.png)
 
+<br>
+
 # Examples for today's workshop
 In this workshop, we will introduce multiple examples demonstrating what you
 can do using Terra. 
@@ -147,10 +149,10 @@ can do using Terra.
 |Session | Example | Where | Objective |
 |---|---|---|---|
 |Usecase|CNV analysis|Terra|Reproducibility + Storage/Compute|
-||Teaching|Terra|Convenient setup|
+||Teaching|Terra|Convenient setup + Collaboration|
 |Live demo|AnVILPublish|Your laptop --> Terra|Reproducibility|
 ||GenomicSuperSignature|Terra RStudio|Convenient setup + Reproducibility|
 ||RunTerraWorkflow (beta)|Your laptop|Remote use of Terra|
-|Hands-on|DESeq2|Terra|Demonstrate Terra Structure|
+|Hands-on|DESeq2|Terra|Demonstrate Terra|
 
 

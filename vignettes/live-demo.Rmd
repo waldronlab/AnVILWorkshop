@@ -27,7 +27,7 @@ If necessary, install the AnVILPublish library.
 
 ```{r message=FALSE, eval=FALSE}
 if (!"AnVILPublish" %in% rownames(installed.packages()))
-    BiocManager::install("AnVILPublish")
+    AnVIL::install("AnVILPublish")
 ```
 
 There are only a small number of functions in the package; it is
@@ -59,10 +59,6 @@ Note that these be used to set, as well as interrogate, the account and project.
 ### `notedown` software
 Conversion of .Rmd vignettes to .ipynb notebooks uses [notedown](https://github.com/aaren/notedown)
 python software. It must be available from within _R_, e.g.,
-
-```{r echo=FALSE, eval=FALSE}
-Sys.setenv(PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/rstudio/.local/bin")
-```
 
 ```{r}
 system2("notedown", "--version")

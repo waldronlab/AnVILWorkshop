@@ -28,7 +28,7 @@ This workspace performs bulk RNASeq differential expression from FASTQ files.
 Salmon quantification step is implemented in WORKFLOWS and the downstream 
 analysis by DESeq2 is available under NOTEBOOKS.
 
-1. Login to Terra and navigate to **"Bioconductor-Workflow-DESeq2"** workspace  
+1. Login to Terra and navigate to **"Bioconductor-Workflow-DESeq2-BioC2021"** workspace  
 2. Clone this workspace:    
 - Assign a *unique* workspace name   
 - Use the billing project, **"bioc2021-workshop"**   
