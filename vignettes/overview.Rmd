@@ -151,7 +151,7 @@ can do using Terra.
 |Usecase|CNV analysis|Terra|Reproducibility + Storage/Compute|
 ||Teaching|Terra|Convenient setup + Collaboration|
 |Live demo|AnVILPublish|Your laptop --> Terra|Reproducibility|
-||GenomicSuperSignature|Terra RStudio|Convenient setup + Reproducibility|
+||GenomicSuperSignature|Terra|RStudio + Reproducibility|
 ||RunTerraWorkflow (beta)|Your laptop|Remote use of Terra|
 |Hands-on|DESeq2|Terra|Demonstrate Terra|
 
