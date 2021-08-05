@@ -34,6 +34,10 @@ analysis by DESeq2 is available under NOTEBOOKS.
 - Use the billing project, **"bioc2021-workshop"**   
 
 ![](images/clone_demo_workspace2.png)
+3. Start a Jupyter Notebook interactive environment
+
+![](images/default_runtime.png)
+
 
 ## Run workflow
 
@@ -58,11 +62,6 @@ analysis by DESeq2 is available under NOTEBOOKS.
 
 ## Interactive analysis   
 ### Set up cloud environment  
-
-* Start a Jupyter Notebook interactive environment
-
-![](images/default_runtime.png)
-
 * Package update
   - When the runtime is ready, launch an interactive shell to update packages
   - An interactive shell is 'better' for updating packages because we can see 
