@@ -45,7 +45,7 @@ This workshop is supported by the [NHGRI Genomic Data Science Analysis, Visualiz
 2. Select the ‘HAMBURGER’ menu in the top left corner   
 3. Choose ‘Sign in with Google’   
 
-<img src="https://raw.githubusercontent.com/waldronlab/AnVILWorkshop/master/vignettes/images/signin.png" alt="Sign-in" style="width:140px;height:200px;">
+<img src="https://raw.githubusercontent.com/waldronlab/AnVILWorkshop/devel/vignettes/images/signin.png" alt="Sign-in" style="width:140px;height:200px;">
 
 ## Workshop Participation
 
